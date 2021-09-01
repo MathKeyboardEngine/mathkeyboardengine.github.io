@@ -10,7 +10,7 @@ void Main()
 	{
 		CreateWebPage(example, text => text.Replace(
 			@"import * as mke from '../../dist/MathKeyboardEngine.es2020-esm.js';",
-			@"import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.1.0-beta.5/dist/MathKeyboardEngine.es2017-esm.min.js';"));
+			@"import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.1.0-beta.6/dist/MathKeyboardEngine.es2017-esm.min.js';"));
 	}
 }
 
