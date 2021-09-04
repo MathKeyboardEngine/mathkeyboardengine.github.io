@@ -10,10 +10,37 @@
       let latexConfiguration = new mke.LatexConfiguration();
       let keyboardMemory = new mke.KeyboardMemory();
       const supportsSelectionMode = 'supportsSelectionMode';
+      const darkSelectionModeColor = '#1668c7';
+      const lightSelectionModeColor = '#add8e6';
+      
+      const colorScheme = document.getElementById('colorScheme'); 
+      const bodyClassList = document.body.classList;
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        bodyClassList.remove('dark');
+        colorScheme.innerText ='light';
+        setSelectionModeColor(lightSelectionModeColor)
+      } else {
+        colorScheme.innerText ='dark';
+        setSelectionModeColor(darkSelectionModeColor)
+      }
 
-      // === MathJax specific code START ===
-      latexConfiguration.selectionHightlightStart = String.raw`\bbox[#ADD8E6]{`;
-      // === MathJax specific code END ===
+      document.getElementById('colorSchemeToggle').onclick = () => {
+        if (colorScheme.innerText == 'light') {
+          bodyClassList.add('dark');
+          colorScheme.innerText = 'dark';
+          setSelectionModeColor(darkSelectionModeColor)
+        } else {
+          bodyClassList.remove('dark');
+          colorScheme.innerText = 'light';
+          setSelectionModeColor(lightSelectionModeColor)
+        }
+        displayResult();
+      };
+
+      function setSelectionModeColor(color) {
+        document.body.style.setProperty('--selection-mode-color', color);
+        setSelectionHightlightStart(color);
+      }
 
       displayResult();
 
@@ -34,14 +61,13 @@
         const key = document.getElementById('decimalSeparator');
         if (decimalSeparatorTypeElement.innerText == 'decimal comma') {
           decimalSeparatorTypeElement.innerText = 'decimal point';
-          renderLatexInKey('.', key);
+          typesetLatexInKey('.', key);
         } else {
           decimalSeparatorTypeElement.innerText = 'decimal comma';
-          renderLatexInKey('{,}', key);
+          typesetLatexInKey('{,}', key);
         }
         displayResult();
       };
-
       registerNodeKey('decimalSeparator', () => new mke.DecimalSeparatorNode(() => (decimalSeparatorTypeElement.innerText == 'decimal comma' ? '{,}' : '.')));
 
       registerNodeKey('equal', () => new mke.StandardLeafNode('='));
@@ -158,7 +184,7 @@
         }
 
         let latex = mke.GetViewModeLatex(nodeGetter(), latexConfiguration);
-        renderLatexInKey(latex, element);
+        typesetLatexInKey(latex, element);
         element.onclick = () => {
           if (mke.InSelectionMode(keyboardMemory)) {
             if (onclickSelectionModeArrowFuncForKeyboardMemoryAndNode != null) {
@@ -195,26 +221,36 @@
 
       function displayResult() {
         let editModeLatex = mke.GetEditModeLatex(keyboardMemory, latexConfiguration);
-        renderLatexInOutputBox(editModeLatex, document.getElementById('renderedEditModeLatex'));
+        typesetLatexInOutputBox(editModeLatex, document.getElementById('typesetEditModeLatex'));
 
         let viewModeLatex = mke.GetViewModeLatex(keyboardMemory, latexConfiguration);
         document.getElementById('viewModeLatex').innerText = viewModeLatex;
       }
 
       // === MathJax specific code START ===
-      function renderLatexInKey(latex, element) {
+      function typesetLatexInKey(latex, element) {
         element.innerText = String.raw`\(` + latex + String.raw`\)`;
         MathJax.Hub.Typeset(element);
       }
 
-      function renderLatexInOutputBox(latex, element) {
+      function typesetLatexInOutputBox(latex, element) {
         element.innerText = String.raw`\[` + latex + String.raw`\]`;
         MathJax.Hub.Typeset(element);
       }
+
+      function setSelectionHightlightStart(color) {
+        latexConfiguration.selectionHightlightStart = String.raw`\bbox[` + color + ']{';
+        }
+      latexConfiguration.selectionHightlightEnd = '}';
       // === MathJax specific code END ===
     </script>
     <style>
-      #renderedEditModeLatex {
+      :root {
+          --selection-mode-color:#1668c7;
+      }
+      .dark { background-color: black; color: white; }
+
+      #typesetEditModeLatex {
         border: 1px solid gray;
         padding: 5px;
       }
@@ -235,52 +271,55 @@
         height: 0;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 10px solid black;
+        border-bottom: 10px solid gray;
       }
       .arrow-down {
         width: 0;
         height: 0;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-top: 10px solid black;
+        border-top: 10px solid gray;
       }
       .arrow-right {
         width: 0;
         height: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-left: 10px solid black;
+        border-left: 10px solid gray;
       }
       .arrow-left {
         width: 0;
         height: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-right: 10px solid black;
+        border-right: 10px solid gray;
       }
       .inSelectionMode {
-        background-color: #add8e6;
+        background-color: var(--selection-mode-color);
       }
       #selectionModeToggle {
-        background-color: #add8e6;
+        background-color: var(--selection-mode-color);
         width: 15px;
         height: 15px;
       }
 
       .setting {
         margin: 10px;
+        cursor: default;
       }
 
       .setting-value {
-        border: 1px solid black;
+        border: 1px solid gray;
         padding: 3px;
       }
+
+      a { color: #1668c7; }
     </style>
   </head>
-  <body>
+  <body class="dark">
     <h1>MathKeyboardEngine + MathJax</h1>
     <h3>Example keys - to be styled - to help you design your virtual math keyboard</h3>
-    <div id="renderedEditModeLatex"></div>
+    <div id="typesetEditModeLatex"></div>
     <div id="viewModeLatex"></div>
     <br />
     <div id="mathKeyboard">
@@ -398,9 +437,9 @@
     <h4>Settings</h4>
     <div id="multiplicationSignToggle" class="setting">Output multiplication sign: <span class="setting-value" id="multiplicationSignType">cross</span></div>
     <div id="decimalSeparatorToggle" class="setting">Decimal separator: <span class="setting-value" id="decimalSeparatorType">decimal point</span></div>
-
+    <div id="colorSchemeToggle" class="setting">Color scheme: <span class="setting-value" id="colorScheme"></span></div>
     <div style="text-align: center;">
-      <a  href="https://github.com/MathKeyboardEngine/MathKeyboardEngine">View on GitHub</a>
+      <a href="https://github.com/MathKeyboardEngine/MathKeyboardEngine">View on GitHub</a>
     </div>
   </body>
 </html>
