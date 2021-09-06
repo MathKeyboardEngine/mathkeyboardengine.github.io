@@ -257,53 +257,34 @@
         color: white;
       }
 
-      body {
-        font-size: 18px;
+      html {
+        font-size: 120%;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
 
-      h1 {
-        font-size: 20px;
-      }
-      .sub-title {
-        font-size: 16px;
-        margin-bottom: 5px;
-      }
-      h2 {
-        font-size: 18px;
-      }
       input {
-        font-size: 18px;
+        font-size: 1rem;
+        width: 2.5rem;
       }
 
       #typesetEditModeLatex {
         border: 1px solid gray;
-        padding: 5px;
-        min-height: 60px;
+        padding: 0.25rem;
       }
       #viewModeLatex {
         text-align: right;
-        padding: 0;
-        margin: 0;
       }
 
       #mathKeyboard > * {
         display: inline-block;
         border: 1px solid gray;
-        padding: 5px;
-        margin: 2px;
-        min-width: 25px;
-        min-height: 25px;
+        padding: 0.25rem;
+        margin: 0.1rem;
+        min-width: 1.5rem;
+        min-height: 1.5rem;
         vertical-align: middle;
         text-align: center;
         cursor: default;
-      }
-
-      #toggleSettings {
-        display: none;
-      }
-      #hoverableSettings:hover #toggleSettings {
-        display: block;
       }
 
       .inSelectionMode {
@@ -311,33 +292,40 @@
       }
       #selectionModeToggle {
         background-color: var(--selection-mode-color);
-        width: 15px;
-        height: 15px;
+      }
+
+      #settingsContainer {
+        display: none;
+        text-align: left;
       }
 
       .setting {
-        margin: 10px;
+        margin: 1rem;
         cursor: default;
       }
       .setting-value {
         border: 1px solid gray;
-        padding: 3px;
+        padding: 0.15rem;
+      }
+
+      .footer {
+        text-align: center;
+        margin: 15px;
       }
 
       a {
         color: #58a6ff;
         text-decoration: none;
         border: 1px solid #58a6ff;
-        padding: 5px;
+        padding: 0.25rem;
       }
     </style>
   </head>
   <body class="dark">
     <h1>MathKeyboardEngine + MathJax</h1>
-    <div class="sub-title">Example keys - to be styled - to help you design your virtual math keyboard</div>
     <div id="typesetEditModeLatex"></div>
     <div id="viewModeLatex"></div>
-    <br />
+    <i>Example keys - to be styled - to help you design your virtual math keyboard</i>
     <div id="mathKeyboard">
       <div id="moveLeft">&#x25C0;</div>
       <div id="moveRight">&#x25B6;</div>
@@ -345,13 +333,13 @@
       <div id="moveUp">&#x25B2;</div>
       <div id="selectionModeToggle"></div>
       <div id="deleteCurrent">&#128293;</div>
-      <div id="hoverableSettings">
+      <div onclick="const settingsContainer = document.getElementById('settingsContainer'); settingsContainer.style.display = settingsContainer.style.display == 'block' ? 'none' : 'block';">
         <strong>Settings</strong>
-        <div id="toggleSettings">
-          <div id="multiplicationSignToggle" class="setting">Output multiplication sign: <span class="setting-value" id="multiplicationSignType">cross</span></div>
-          <div id="decimalSeparatorToggle" class="setting">Decimal separator: <span class="setting-value" id="decimalSeparatorType">decimal point</span></div>
-          <div id="colorSchemeToggle" class="setting">Color scheme: <span class="setting-value" id="colorScheme"></span></div>
-        </div>
+      </div>
+      <div id="settingsContainer">
+        <div id="multiplicationSignToggle" class="setting">Output multiplication sign: <span class="setting-value" id="multiplicationSignType">cross</span></div>
+        <div id="decimalSeparatorToggle" class="setting">Decimal separator: <span class="setting-value" id="decimalSeparatorType">decimal point</span></div>
+        <div id="colorSchemeToggle" class="setting">Color scheme: <span class="setting-value" id="colorScheme"></span></div>
       </div>
       <br />
       <div id="digit0"></div>
@@ -402,10 +390,10 @@
       <br />
       <div style="text-align: right">
         <label for="matrixHeight">Height</label>
-        <input id="matrixHeight" type="number" value="2" min="1" style="width: 50px" />
+        <input id="matrixHeight" type="number" value="2" min="1" />
         <br />
         <label for="matrixWidth">Width</label>
-        <input id="matrixWidth" type="number" value="2" min="1" style="width: 50px" />
+        <input id="matrixWidth" type="number" value="2" min="1" />
       </div>
       <div id="pmatrix"></div>
       <div id="vmatrix"></div>
@@ -458,7 +446,7 @@
       <div id="downarrow"></div>
       <div id="infty"></div>
     </div>
-    <div style="text-align: center; margin-top: 15px">
+    <div class="footer">
       <a href="https://github.com/MathKeyboardEngine/MathKeyboardEngine">View on GitHub</a>
     </div>
   </body>
