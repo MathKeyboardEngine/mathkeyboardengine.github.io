@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <!-- MathJax specific code END -->
     <script type="module" type="text/javascript">
-      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.1.0-beta.6/dist/MathKeyboardEngine.es2017-esm.min.js';
+      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.1.0-beta.7/dist/MathKeyboardEngine.es2017-esm.min.js';
       let latexConfiguration = new mke.LatexConfiguration();
       let keyboardMemory = new mke.KeyboardMemory();
       const supportsSelectionMode = 'supportsSelectionMode';
@@ -193,6 +193,8 @@
           if (mke.InSelectionMode(keyboardMemory)) {
             if (onclickSelectionModeArrowFuncForKeyboardMemoryAndNode != null) {
               onclickSelectionModeArrowFuncForKeyboardMemoryAndNode(keyboardMemory, nodeGetter());
+            } else {
+              onclickFuncForKeyboardMemoryAndNode(keyboardMemory, nodeGetter());
             }
             myLeaveSelectionMode(keyboardMemory);
           } else {
