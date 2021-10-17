@@ -17,8 +17,10 @@
             }
         }
 
-        body{
+        body {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 65rem;
+            margin: auto;
         }
 
         a {
@@ -27,11 +29,16 @@
         }
 
         .repo-link {
-            border: 1px solid #58a6ff;
+            color: gray;
+            border: 1px solid gray;
             border-radius: 0.2em;
         }
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3 {
             margin-bottom: 0.4rem;
+        }
+        h1, h2 {
+            margin-top: 3rem;
+            text-align: center;
         }
         p {
             margin-top: 0.4rem;
@@ -56,7 +63,7 @@
         </ul>
     </p>
     <p>
-        This documentation is not exhaustive. Use 'View declaration' to see the class or function declaration and use 'Search occurrences' for finding all occurrences in unit tests and other parts of the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine">GitHub repository</a>.
+        This documentation is not exhaustive. Use <span class="repo-link">View declaration</span> to see the class or function declaration and use <span class="repo-link">Search occurrences</span> for finding all occurrences in unit tests and other parts of the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine">GitHub repository</a>.
     </p>
     
     
@@ -69,7 +76,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=KeyboardMemory">Search occurrences</a>
     </div>
     <p>If you type into a 'math textbox', you use a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance for that textbox. The <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class will hold the syntax tree of what you've typed and what your current position is (of the 'cursor'). If you'd like to have multiple math textboxes on one page, then use multple instances of the <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class, each linked to a single 'textbox'.</p>
-    
+
     <h3><span id="Placeholder">Placeholder</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Placeholder/Placeholder.ts">View declaration</a>
@@ -112,7 +119,7 @@
     </div>
     <p>
         Calling <a href="#GetEditModeLatex" class="mke-member">GetEditModeLatex</a> outputs the LaTeX for display in a 'math textbox'. It will also contain the cursor (called the "active placeholder" in <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>).<br/>
-        Calling <a href="#GetViewModeLatex" class="mke-member">GetViewModeLatex</a> outputs the LaTeX without active placeholder. If you use MathKeyboardEngine for a course in which the typed answers of students need to be checked, you'll probably also want to use <a href="#GetViewModeLatex" class="mke-member">GetViewModeLatex</a>.
+        If you use MathKeyboardEngine for a course in which the typed answers of students need to be checked, you'll probably also want to use <a href="#GetViewModeLatex" class="mke-member">GetViewModeLatex</a>, which outputs the LaTeX without cursor.
     </p>
     
     
@@ -156,7 +163,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Nodes/BranchingNodes/StandardBranchingNode.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=StandardBranchingNode">Search occurrences</a>
     </div>
-    <p>The <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> can be instantiated as a <a href="#TreeNode" class="mke-member">TreeNode</a> with <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. The number of placeholders that is created, depends on the number of constructor arguments as follows:<br />
+    <p>The <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> is a <a href="#TreeNode" class="mke-member">TreeNode</a> with <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. The number of placeholders that is created, depends on the number of constructor arguments as follows:<br />
         <code>number of placeholders = number of constructor arguments - 1</code><br />
         Use <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for all single-placeholder <a href="#TreeNodes" class="mke-member">TreeNode</a>s, except for a pair of round brackets (then use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>).<br />
         Example usage:<br />
@@ -206,20 +213,21 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/KeyboardEngine/Functions/Insert/Insert.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=Insert">Search occurrences</a>
     </div>
-    <p>You can use only this function and skip the other insert functions, but users "expect" certain behaviour - for example at "2 to the power of 10":<br />
-    NOT THIS:<br />
+    <p>You could use only this function and skip the other insert functions, but users "expect" certain behaviour - for example at "2 to the power of 10":<br />
+    not:<br />
     <pre>
         <code>Insert(k, new AscendingBranchingNode('{', '}^{', '}'));</code>
         <code>Insert(k, new DigitNode('2'));</code>
         <code>MoveRight(k);</code>
         <code>Insert(k, new DigitNode('10'));</code>
     </pre>
-    OK:
+    but:
     <pre>
         <code>Insert(k, new DigitNode('2'));</code>
         <code>InsertWithEncapsulateCurrent(k, new AscendingBranchingNode('{', '}^{', '}'));</code>
         <code>Insert(k, new DigitNode('10'));</code>
     </pre>
+    Both result in the (ViewMode)LaTeX <code>{2}^{10}</code>.
     </p>
     
     <h3><span id="InsertWithEncapsulateCurrent">InsertWithEncapsulateCurrent</span></h3>
