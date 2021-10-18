@@ -43,6 +43,10 @@
         p {
             margin-top: 0.4rem;
         }
+        
+        .center {
+            text-align: center;
+        }
 
         #footer-note {
                 width: 95%;
@@ -54,16 +58,19 @@
   <body>
 
     <h1>Documentation</h1>
-    <p>This page shows all MathKeyboardEngine classes and functions that you can directly use. Helper functions that are not exposed by the library, are not mentioned.</p>
+    <p>This page shows all MathKeyboardEngine classes and functions that you can directly use.
+        Helper functions that are not exposed by the library, are not mentioned.
+        This documentation is not exhaustive.
+        Use <span class="repo-link">View declaration</span> to see the class or function declaration and 
+        use <span class="repo-link">Search occurrences</span> for finding all occurrences in unit tests 
+        and other parts of the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine">GitHub repository</a>.
+    </p>
     <p>Before diving into this documentation:
         <ul>
-            <li>Make sure you have read the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine#readme">repository readme</a>.</li>
+            <li>Read the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine#readme">repository readme</a>.</li>
             <li>Play with one of the <a target="_blank" href="https://mathkeyboardengine.github.io/">live examples</a>.</li>
             <li>Have a look at the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/tree/main/examples">source code</a> of one of the examples.</li>
         </ul>
-    </p>
-    <p>
-        This documentation is not exhaustive. Use <span class="repo-link">View declaration</span> to see the class or function declaration and use <span class="repo-link">Search occurrences</span> for finding all occurrences in unit tests and other parts of the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine">GitHub repository</a>.
     </p>
     
     
@@ -84,18 +91,14 @@
     </div>
     <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type '3', '+' and '1', then the placeholder contains three <a href="#TreeNode" class="mke-member">TreeNode</a>s.<br />
     
-    <h3>
-        <span id="TreeNode">TreeNode</span>
-    </h3>
+    <h3><span id="TreeNode">TreeNode</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Nodes/Base/TreeNode.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=TreeNode">Search occurrences</a>
     </div>
     <p>A <a href="#TreeNode" class="mke-member">TreeNode</a> can be as simple as '3', which is called a <a href="#LeafNode" class="mke-member">LeafNode</a> (it has no <a href="#Placeholder" class="mke-member">Placeholder</a>s). A fraction two <a href="#Placeholders" class="mke-member">Placeholder</a>s: the numerator and the denominator. If a <a href="#TreeNode" class="mke-member">TreeNode</a> has <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s, it is called a <a href="#BranchingNode" class="mke-member">BranchingNode</a>.</p>
     
-    <h3>
-        <span id="LatexConfiguration">LatexConfiguration</span>
-    </h3>
+    <h3><span id="LatexConfiguration">LatexConfiguration</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/LatexConfiguration.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=LatexConfiguration">Search occurrences</a>
@@ -371,6 +374,7 @@
     <br />
     <br />
     <br />
+    <div class="center">If you've found an error on this page, please <a target="_blank" href="https://github.com/MathKeyboardEngine/mathkeyboardengine.github.io/blob/main/docs/0.1/index.html">report it or open a pull request</a>.</div>
     <br />
     <br />
     <br />
