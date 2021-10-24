@@ -103,11 +103,37 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/KeyboardEngine/KeyboardMemory.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=KeyboardMemory">Search occurrences</a>
     </div>
-    <p>If you type into a 'math textbox', you use a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance for that textbox. The <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class will hold the syntax tree of what you've typed and what your current position is (of the 'cursor'). If you'd like to have multiple math textboxes on one page, then use multple instances of the <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class, each linked to a single 'textbox'.</p>
-    <p>The <code>syntraxTreeRoot</code> is a <a href="#Placeholder" class="mke-member">Placeholder</a>:</p>
-    <div class="drawing-Placeholder">
-    </div>
+    <p>If you type into a 'math textbox', you use a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance for that textbox. The <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class will hold the syntax tree of what you've typed and what the <code>current</code> position is of the cursor. If you'd like to have multiple math textboxes on one page, then use multple instances of the <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class, each linked to a single 'textbox'.</p>
 
+    <h3><span id="LatexConfiguration">LatexConfiguration</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/LatexConfiguration.ts">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=LatexConfiguration">Search occurrences</a>
+    </div>
+    <p>In the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a> class, the cursor is called the "active placeholder".
+        You can choose the shape and color of the active placeholder ('cursor') and also of all other <a href="#Placeholder" class="mke-member">Placeholder</a>s that are empty but that are not the current position of your 'cursor'.
+    </p>
+    <p>You can also choose how to highlight a selection - for example via a background color. (See `selectLeft`.)</p>
+    
+    <h3>
+        <span id="getEditModeLatex">getEditModeLatex</span>
+        and
+        <span id="getViewModeLatex">getViewModeLatex</span>
+    </h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/GetLatex/getEditModeLatex.ts">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=getEditModeLatex">Search occurrences</a>
+        <br />
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/GetLatex/getViewModeLatex.ts">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=getViewModeLatex">Search occurrences</a>
+    </div>
+    <p>
+        Calling <a href="#getEditModeLatex" class="mke-member">getEditModeLatex</a> outputs the LaTeX for display in a 'math textbox'. It will also contain the cursor (called the "active placeholder" in <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>).<br/>
+        If you use MathKeyboardEngine for a course in which the typed answers of students need to be checked, you'll probably also want to use <a href="#getViewModeLatex" class="mke-member">getViewModeLatex</a>, which outputs the LaTeX without cursor.
+    </p>
+    
+    
+    <h2>2. Syntax tree components</h2>
     <h3><span id="Placeholder">Placeholder</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Placeholder/Placeholder.ts">View declaration</a>
@@ -131,38 +157,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=TreeNode">Search occurrences</a>
     </div>
     <p>A <a href="#TreeNode" class="mke-member">TreeNode</a> can be as simple as '3', which is called a <a href="#LeafNode" class="mke-member">LeafNode</a> (it has no <a href="#Placeholder" class="mke-member">Placeholder</a>s). A fraction has two <a href="#Placeholder" class="mke-member">Placeholder</a>s: the numerator and the denominator. If a <a href="#TreeNode" class="mke-member">TreeNode</a> has <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s, it is called a <a href="#BranchingNode" class="mke-member">BranchingNode</a>.</p>
-    
-    <h3><span id="LatexConfiguration">LatexConfiguration</span></h3>
-    <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/LatexConfiguration.ts">View declaration</a>
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=LatexConfiguration">Search occurrences</a>
-    </div>
-    <p>In the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a> class, the cursor is called the "active placeholder". Let's say that you've typed a fraction and that the 'cursor' is in the numerator. The corresponding LaTeX may look like this:<br />
-        <code>\frac{myActivePlaceholder}{myPassivePlaceholder}</code><br/>
-        You can choose the shape and color of the active placeholder ('cursor') and also of all other <a href="#Placeholder" class="mke-member">Placeholder</a>s that are empty but that are not the current position of your 'cursor'.
-    </p>
-    
-    <h3>
-        <span id="getEditModeLatex">getEditModeLatex</span>
-        and
-        <span id="getViewModeLatex">getViewModeLatex</span>
-    </h3>
-    <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/GetLatex/getEditModeLatex.ts">View declaration</a>
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=getEditModeLatex">Search occurrences</a>
-        <br />
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/GetLatex/getViewModeLatex.ts">View declaration</a>
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=getViewModeLatex">Search occurrences</a>
-    </div>
-    <p>
-        Calling <a href="#getEditModeLatex" class="mke-member">getEditModeLatex</a> outputs the LaTeX for display in a 'math textbox'. It will also contain the cursor (called the "active placeholder" in <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>).<br/>
-        If you use MathKeyboardEngine for a course in which the typed answers of students need to be checked, you'll probably also want to use <a href="#getViewModeLatex" class="mke-member">getViewModeLatex</a>, which outputs the LaTeX without cursor.
-    </p>
-    
-    
-    <h2>2. TreeNodes</h2>
-    <p>A <a href="#TreeNode" class="mke-member">TreeNode</a> can be as simple as '3', which is called a <a href="#LeafNode" class="mke-member">LeafNode</a> (it has no <a href="#Placeholder" class="mke-member">Placeholder</a>s). A fraction has two <a href="#Placeholder" class="mke-member">Placeholder</a>s: the numerator and the denominator. If a <a href="#TreeNode" class="mke-member">TreeNode</a> has <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s, it is called a <a href="#BranchingNode" class="mke-member">BranchingNode</a>.</p>
-    
+        
     <h3><span id="LeafNode">LeafNode</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Nodes/Base/LeafNode.ts">View declaration</a>
