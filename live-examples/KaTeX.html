@@ -14,7 +14,7 @@
       // KaTeX specific code START
       import katex from 'https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.mjs';
       // KaTeX specific code END
-      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.1.0-beta.9/dist/MathKeyboardEngine.es2017-esm.min.js';
+      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.1.0-beta.10/dist/MathKeyboardEngine.es2017-esm.min.js';
       let latexConfiguration = new mke.LatexConfiguration();
       let keyboardMemory = new mke.KeyboardMemory();
       const supportsSelectionMode = 'supportsSelectionMode';
@@ -114,12 +114,12 @@
       registerNodeKey('binomial', () => new mke.DescendingBranchingNode(String.raw`\binom{`, '}{', '}'), mke.insert, mke.insertWithEncapsulateSelection);
 
       function getPowerNode() {
-        return new mke.AscendingBranchingNode('{', '}^{', '}');
+        return new mke.AscendingBranchingNode('', '^{', '}');
       }
       registerNodeKey('power', getPowerNode, mke.insertWithEncapsulateCurrent, mke.insertWithEncapsulateSelectionAndPrevious);
 
       function getSubscriptNode() {
-        return new mke.DescendingBranchingNode('{', '}_{', '}');
+        return new mke.DescendingBranchingNode('', '_{', '}');
       }
       registerNodeKey('subscript', getSubscriptNode, mke.insertWithEncapsulateCurrent, mke.insertWithEncapsulateSelectionAndPrevious);
 
