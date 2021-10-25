@@ -113,7 +113,7 @@
     <p>In the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a> class, the cursor is called the "active placeholder".
         You can choose the shape and color of the active placeholder ('cursor') and also of all other <a href="#Placeholder" class="mke-member">Placeholder</a>s that are empty but that are not the current position of your 'cursor'.
     </p>
-    <p>You can also choose how to highlight a selection - for example via a background color. (See `selectLeft`.)</p>
+    <p>You can also choose how to highlight a selection - for example via a background color. (See <a href="#selectLeft" class="mke-member">selectLeft</a>.)</p>
     
     <h3>
         <span id="getEditModeLatex">getEditModeLatex</span>
@@ -139,7 +139,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Placeholder/Placeholder.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=Placeholder">Search occurrences</a>
     </div>
-    <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type 'a', '+' and '1', then the syntax tree consists of one placeholder (the syntaxTreeRoot) and three <a href="#TreeNode" class="mke-member">TreeNode</a>s:<br />
+    <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type 'a', '+' and '1', then the syntax tree consists of one <a href="#Placeholder" class="mke-member">Placeholder</a> (<a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a>'s <code>syntaxTreeRoot</code>) and three <a href="#TreeNode" class="mke-member">TreeNode</a>s:<br />
     <div class="drawing-Placeholder">
         <div class="drawing-TreeNode">
             a
@@ -173,7 +173,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Nodes/LeafNodes/StandardLeafNode.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=StandardLeafNode">Search occurrences</a>
     </div>
-    <p>The <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a> should be used for everything that has no placeholder, except if it is part of a number with digits (such as 12.75, for which you should use <a href="#DigitNode" class="mke-member">DigitNode</a>s and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>). So, use this for variables x, y, z, for arrows, and more.</p>
+    <p>The <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a> should be used for everything that has no <a href="#Placeholder" class="mke-member">Placeholder</a>, except if it is part of a number with digits (such as 12.75, for which you should use <a href="#DigitNode" class="mke-member">DigitNode</a>s and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>). So, use this for variables x, y, z, for arrows, and more.</p>
     
     <h3><span id="DigitNode">DigitNode</span> and <span id="DecimalSeparatorNode">DecimalSeparatorNode</span></h3>
     <div class="external-links">
@@ -246,7 +246,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Nodes/BranchingNodes/StandardBranchingNode.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=StandardBranchingNode">Search occurrences</a>
     </div>
-    <p>The <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> is a <a href="#BranchingNode" class="mke-member">BranchingNode</a> with <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. The number of placeholders that is created, depends on the number of constructor arguments as follows:<br />
+    <p>The <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> is a <a href="#BranchingNode" class="mke-member">BranchingNode</a> with <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. The number of <a href="#Placeholder" class="mke-member">Placeholder</a>s that is created, depends on the number of constructor arguments as follows:<br />
         <code>number of placeholders = number of constructor arguments - 1</code><br />
         Use <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for all single-placeholder <a href="#BranchingNode" class="mke-member">BranchingNode</a>s, except for a pair of round brackets (then use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>).<br />
         <p>
@@ -286,7 +286,7 @@
     <p>
         Instead of using two <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s or one single-placeholder <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for two brackets, you probably want to use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, because some functions treat it specially.<br />
         Especially when typing with the physical keyboard, the need for special treatment arises: when typing '(', '1', '+', 'x', ')', '/', 'x' you probably want <code>\frac{1+x}{x}</code> as output - so, without brackets.<br />
-        A trick to do this, is: let pressing '(' result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing ')' result in a <a href="#moveRight" class="mke-member">moveRight</a> and let pressing '/' result in <a href="#insertWithEncapsulateCurrent" class="mke-member">insertWithEncapsulateCurrent</a> for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
+        A trick to do this, is: let pressing '(' result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing ')' result in a <a href="#moveRight" class="mke-member">moveRight</a> and let pressing '/' result in <a href="#insertWithEncapsulateCurrent" class="mke-member">insertWithEncapsulateCurrent</a> (with the config <code>{ deleteOuterRoundBracketsIfAny: true }</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
     </p>
     
     <h3><span id="MatrixNode">MatrixNode</span></h3>
@@ -301,7 +301,7 @@
     
     
     <h2>3. Adding to KeyboardMemory</h2>
-    <p>Whether using MathKeyboardEngine with virtual keys, physical keys or both, you'll need to add nodes to a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance via one of the four insert functions.</p>
+    <p>Whether you're using MathKeyboardEngine with virtual keys, physical keys or both, you'll need to add nodes to a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance via one of the four insert functions.</p>
     
     <h3><span id="insert">insert</span></h3>
     <div class="external-links">
@@ -336,8 +336,8 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelection.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=insertWithEncapsulateSelection">Search occurrences</a>
     </div>
-    <p>Let's say you've typed 1 + x and you then* decide that this should become the numerator of a fraction. In that case, you can use `selectLeft` and call `insertWithEncapsulateSelection` to insert a "fraction node".</p>
-    <p>*There are multiple ways to do this more effeciently.</p>
+    <p>Let's say you've typed 1 + x and you then* decide that this should become the numerator of a fraction. In that case, you can use <a href="#selectLeft" class="mke-member">selectLeft</a> and call <a href="#insertWithEncapsulateSelection" class="mke-member">insertWithEncapsulateSelection</a> to insert a "fraction node".</p>
+    <p>*There are multiple ways to do this more efficiently.</p>
     <h3><span id="insertWithEncapsulateSelectionAndPrevious">insertWithEncapsulateSelectionAndPrevious</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelectionAndPrevious.ts">View declaration</a>
