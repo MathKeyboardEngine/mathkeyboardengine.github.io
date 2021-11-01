@@ -314,13 +314,15 @@
         <code>insert(k, new AscendingBranchingNode('', '^{', '}'));</code>
         <code>insert(k, new DigitNode('2'));</code>
         <code>moveRight(k);</code>
-        <code>insert(k, new DigitNode('10'));</code>
+        <code>insert(k, new DigitNode('1'));</code>
+        <code>insert(k, new DigitNode('0'));</code>
     </pre>
     but:
     <pre>
         <code>insert(k, new DigitNode('2'));</code>
         <code>insertWithEncapsulateCurrent(k, new AscendingBranchingNode('', '^{', '}'));</code>
-        <code>insert(k, new DigitNode('10'));</code>
+        <code>insert(k, new DigitNode('1'));</code>
+        <code>insert(k, new DigitNode('0'));</code>
     </pre>
     Both result in the (ViewMode)LaTeX <code>2^{10}</code>.
     </p>
