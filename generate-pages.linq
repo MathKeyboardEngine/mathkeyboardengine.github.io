@@ -2,11 +2,11 @@
 
 readonly UTF8Encoding _encoding = new UTF8Encoding(true);
 readonly DirectoryInfo _websiteFolder = new System.IO.DirectoryInfo(@"C:\_\Repos\mathkeyboardengine.github.io");
-readonly string version = "v0.1.0-beta.11";
+readonly string version = "v0.1.0";
 
 void Main()
 {	
-	var examples = new System.IO.DirectoryInfo(@"C:\_\Repos\MathKeyboardEngine\examples").GetFiles();
+	var examples = new System.IO.DirectoryInfo(@"C:\_\Repos\MathKeyboardEngine\examples").GetFiles().Where(f => !f.Name.Contains("-easy"));
 	foreach (var example in examples)
 	{
 		CreateWebPage(example, text => text.Replace(
