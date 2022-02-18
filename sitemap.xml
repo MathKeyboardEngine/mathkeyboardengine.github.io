@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://github.com/MathKeyboardEngine/MathKeyboardEngine</loc>
+  </url>
+  <url>
+    <loc>https://mathkeyboardengine.github.io/</loc>
+  </url>
+  <url>
+    <loc>https://mathkeyboardengine.github.io/live-examples/KaTeX.html</loc>
+  </url>
+  <url>
+    <loc>https://mathkeyboardengine.github.io/live-examples/MathJax.html</loc>
+  </url>
+  <url>
+    <loc>https://mathkeyboardengine.github.io/docs/0.1/</loc>
+  </url>
+</urlset>
