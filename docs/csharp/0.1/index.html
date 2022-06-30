@@ -1,0 +1,513 @@
+<!--
+    For editing this page, use backticks and the following RegEx to quickly create links to sections with information about a class or function:
+    replace: `(?<word>[a-zA-Z]+)`
+    by: <a href="#$1" class="mke-member">$1</a>
+    This will replace - for example - `TreeNode` by <a href="#TreeNode" class="mke-member">TreeNode</a>.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MathKeyboardEngine Documentation (C#)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        @media (prefers-color-scheme: dark) {
+            body { 
+                background: black; 
+                color: white;
+            }
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 65rem;
+            margin: auto;
+            padding: 0.5em;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .repo-link {
+            color: gray;
+            border: 1px solid gray;
+            border-radius: 0.2em;
+        }
+        h1, h2, h3 {
+            margin-bottom: 0.4rem;
+        }
+        h1, h2 {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        p {
+            margin-top: 0.4rem;
+        }
+        
+        .center {
+            text-align: center;
+        }
+
+        #footer-note {
+            padding: 2.5%;
+            text-align: center;
+        }
+
+        .drawing-Placeholder {
+            border: 2px solid yellow;
+            border-top: 0;
+            padding: 0.3em;
+            margin: 0.05em;
+
+            display: inline-block;
+        }
+
+        .drawing-TreeNode {
+            border: 2px solid blue;
+            border-top: 0;
+            border-end-end-radius: 1em;
+            border-end-start-radius: 1em;
+            padding: 0.3em;
+            padding-top: 0;
+            margin: 0.05em;
+            margin-top: 0;
+
+            display: inline-block;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1>Documentation (C#)</h1>
+    <p>This page shows all <strong>MathKeyboardEngine for C#</strong> classes and functions that you can directly use.
+        Helper functions that are not exposed by the library, are not mentioned.
+        This documentation is not exhaustive.
+        Use <span class="repo-link">View declaration</span> to see the class or function declaration and 
+        use <span class="repo-link">Search occurrences</span> for finding all occurrences in unit tests 
+        and other parts of the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp">GitHub repository</a>.
+    </p>
+    <p>Before diving into this documentation:
+        <ul>
+            <li>Read the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp#readme">repository readme</a>.</li>
+            <li>Play with one of the <a target="_blank" href="https://mathkeyboardengine.github.io/">live examples</a>.</li>
+            <li>Have a look at the <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/tree/main/Examples">source code</a> of one of the examples.</li>
+        </ul>
+    </p>
+    
+    
+    <h2>1. Basics</h2>
+    
+    <h3><span id="KeyboardMemory">KeyboardMemory</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/KeyboardMemory.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=KeyboardMemory">Search occurrences</a>
+    </div>
+    <p>If you type into a 'math textbox', you use a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance for that textbox. The <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class will hold the syntax tree of what you've typed and what the <code>current</code> position is of the cursor. If you'd like to have multiple math textboxes on one page, then use multple instances of the <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class, each linked to a single 'textbox'.</p>
+
+    <h3><span id="LatexConfiguration">LatexConfiguration</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/LatexConfiguration.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=LatexConfiguration">Search occurrences</a>
+    </div>
+    <p>In the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a> class, the cursor is called the "active placeholder".
+        You can choose the shape and color of the active placeholder ('cursor') and also of all other <a href="#Placeholder" class="mke-member">Placeholder</a>s that are empty but that are not the current position of your 'cursor'.
+    </p>
+    <p>You can also choose how to highlight a selection - for example via a background color. (See <a href="#SelectLeft" class="mke-member">SelectLeft</a>.)</p>
+    
+    <h3>
+        <span id="GetEditModeLatex">GetEditModeLatex</span>
+        and
+        <span id="GetViewModeLatex">GetViewModeLatex</span>
+    </h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/GetLatex.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=GetEditModeLatex">Search occurrences</a>
+        <br />
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/GetLatex.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=GetViewModeLatex">Search occurrences</a>
+    </div>
+    <p>
+        Calling <a href="#GetEditModeLatex" class="mke-member">GetEditModeLatex</a> outputs the LaTeX for display in a 'math textbox'. It will also contain the cursor (called the "active placeholder" in <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>).<br/>
+        If you use MathKeyboardEngine for a course in which the typed answers of students need to be checked, you'll probably also want to use <a href="#GetViewModeLatex" class="mke-member">GetViewModeLatex</a>, which outputs the LaTeX without cursor.
+    </p>
+    
+    
+    <h2>2. Syntax tree components</h2>
+    <h3><span id="Placeholder">Placeholder</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Placeholder.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=Placeholder">Search occurrences</a>
+    </div>
+    <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type 'a', '+' and '1', then the syntax tree consists of one <a href="#Placeholder" class="mke-member">Placeholder</a> (<a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a>'s <code>SyntaxTreeRoot</code>) and three <a href="#TreeNode" class="mke-member">TreeNode</a>s:<br />
+    <div class="drawing-Placeholder">
+        <div class="drawing-TreeNode">
+            a
+        </div>
+        <div class="drawing-TreeNode">
+            +
+        </div>
+        <div class="drawing-TreeNode">
+            1
+        </div>
+    </div>
+    <h3><span id="TreeNode">TreeNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/TreeNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=TreeNode">Search occurrences</a>
+    </div>
+    <p>A <a href="#TreeNode" class="mke-member">TreeNode</a> can be as simple as '3', which is called a <a href="#LeafNode" class="mke-member">LeafNode</a> (it has no <a href="#Placeholder" class="mke-member">Placeholder</a>s). A fraction has two <a href="#Placeholder" class="mke-member">Placeholder</a>s: the numerator and the denominator. If a <a href="#TreeNode" class="mke-member">TreeNode</a> has <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s, it is called a <a href="#BranchingNode" class="mke-member">BranchingNode</a>.</p>
+        
+    <h3><span id="LeafNode">LeafNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/LeafNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=LeafNode">Search occurrences</a>
+    </div>
+    <p>The base class for all <a href="#TreeNode" class="mke-member">TreeNode</a>s that have no <a href="#Placeholder" class="mke-member">Placeholder</a>s. You'll probably not use this class directly in your code, unless you would like to create your own SyntaxTree-manipulating functions.</p>
+    <p>A single <a href="#LeafNode" class="mke-member">LeafNode</a> - not nested in the <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a>'s <code>SyntaxTreeRoot</code>:</p>
+    <div class="drawing-TreeNode">
+        y
+    </div>
+    <h3><span id="StandardLeafNode">StandardLeafNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/StandardLeafNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=StandardLeafNode">Search occurrences</a>
+    </div>
+    <p>The <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a> should be used for everything that has no <a href="#Placeholder" class="mke-member">Placeholder</a>, except if it is part of a number with digits (such as 12.75, for which you should use <a href="#DigitNode" class="mke-member">DigitNode</a>s and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>). So, use this for variables x, y, z, for arrows, and more.</p>
+    
+    <h3><span id="DigitNode">DigitNode</span> and <span id="DecimalSeparatorNode">DecimalSeparatorNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/DigitNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=DigitNode">Search occurrences</a>
+        <br />
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/DecimalSeparatorNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=DecimalSeparatorNode">Search occurrences</a>
+    </div>
+    <p>Use the <a href="#DigitNode" class="mke-member">DigitNode</a> for composing a number with 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 (and maybe other symbols if you like to type not in base 10, but in - for example - base 12) and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a> for its decimal separator ('.' or ',' in some cultures).<br />
+    The <a href="#DigitNode" class="mke-member">DigitNode</a> and <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a> are treated specially by some functions. For example, <a href="#InsertWithEncapsulateCurrent" class="mke-member">InsertWithEncapsulateCurrent</a> treats '12.75' as a single 'thing' instead of 5 separate <a href="#TreeNode" class="mke-member">TreeNode</a>s, so that if you insert a fraction after typing a number, it moves the whole number to the numerator of the fraction.</p>
+    
+    <h3><span id="BranchingNode">BranchingNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/BranchingNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=BranchingNode">Search occurrences</a>
+    </div>
+    <p>The base class for all <a href="#TreeNode" class="mke-member">TreeNode</a>s that have <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. You'll probably not use this class directly in your code, unless you would like to create your own SyntaxTree-manipulating functions.</p>
+    <p>A single-placeholder <a href="#BranchingNode" class="mke-member">BranchingNode</a> that contains a <a href="#LeafNode" class="mke-member">LeafNode</a>:</p>
+    <div class="drawing-TreeNode">
+        \sqrt{
+            <div class="drawing-Placeholder">
+                <div class="drawing-TreeNode">
+                    2
+                </div>
+            </div>
+        }
+    </div>
+    <p>A multi-placeholder <a href="#BranchingNode" class="mke-member">BranchingNode</a> of which the first <a href="#Placeholder" class="mke-member">Placeholder</a> contains two <a href="#LeafNode" class="mke-member">LeafNode</a>s and the second <a href="#Placeholder" class="mke-member">Placeholder</a> is empty:</p>
+    <div class="drawing-TreeNode">
+        \frac{
+            <div class="drawing-Placeholder">
+                <div class="drawing-TreeNode">
+                    2
+                </div>
+                <div class="drawing-TreeNode">
+                    x
+                </div>
+            </div>
+        }{
+            <div class="drawing-Placeholder">
+            </div>
+        }
+    </div>
+    <p>A single-placeholder <a href="#BranchingNode" class="mke-member">BranchingNode</a> that contains two <a href="#LeafNode" class="mke-member">LeafNode</a>s and one multi-placeholder <a href="#BranchingNode" class="mke-member">BranchingNode</a>:</p>
+    <div class="drawing-TreeNode">
+        \sqrt{
+        <div class="drawing-Placeholder">
+            <div class="drawing-TreeNode">
+                1
+            </div>
+            <div class="drawing-TreeNode">
+                +
+            </div>
+            <div class="drawing-TreeNode">
+                \frac{
+                    <div class="drawing-Placeholder">
+                    </div>
+                }{
+                    <div class="drawing-Placeholder">
+                    </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+
+    <h3><span id="StandardBranchingNode">StandardBranchingNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/StandardBranchingNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=StandardBranchingNode">Search occurrences</a>
+    </div>
+    <p>The <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> is a <a href="#BranchingNode" class="mke-member">BranchingNode</a> with <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. The number of <a href="#Placeholder" class="mke-member">Placeholder</a>s that is created, depends on the number of constructor arguments as follows:<br />
+        <code>number of placeholders = number of constructor arguments - 1</code><br />
+        Use <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for all single-placeholder <a href="#BranchingNode" class="mke-member">BranchingNode</a>s, except for a pair of round brackets (then use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>).<br />
+        <p>
+            Examples:
+            <ul>
+                <li>Square root: <code>new StandardBranchingNode(@"\sqrt{", "}")</code></li>
+                <li>Power with a fixed exponent: <code>new StandardBranchingNode("", "^2")</code></li>
+            </ul>
+        </p>
+    Note: the <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> does not have pre-configured up/down navigation, so for most multi-placeholder <a href="#BranchingNode" class="mke-member">BranchingNode</a>s, you'd probably want to use <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> or <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>.<br /></p>
+    
+    <h3><span id="AscendingBranchingNode">AscendingBranchingNode</span> and <span id="DescendingBranchingNode">DescendingBranchingNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/AscendingBranchingNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=AscendingBranchingNode">Search occurrences</a>
+        <br />
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/DescendingBranchingNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=DescendingBranchingNode">Search occurrences</a>
+    </div>
+    <p>The <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> both extend the <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a>, but also have ready-to-use up/down navigation.</p>
+    <p>
+        When "reading" a power from left to right, you first read its base and then its exponent, which is slightly higher. So, you're reading from left to right and "upwards" or in an "ascending" manner. The <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> provides ready-to-use up/down navigation, where <a href="#MoveRight" class="mke-member">MoveRight</a> is equal to <a href="#MoveUp" class="mke-member">MoveUp</a> (unless your cursor is in the last <a href="#Placeholder" class="mke-member">Placeholder</a>).<br />
+        For fractions, subscripts, etc. that are read "downwards", the <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> provides ready-to-use up/down navigation.
+    </p>
+    <p>Examples:
+        <ul>
+            <li>Power: <code>new AscendingBranchingNode("", "^{", "}")</code></li>
+            <li>Fraction: <code>new DescendingBranchingNode(@"\frac{", "}{", "}")</code></li>
+        </ul>
+    </p>
+    
+    <h3><span id="RoundBracketsNode">RoundBracketsNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/RoundBracketsNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=RoundBracketsNode">Search occurrences</a>
+    </div>
+    <p>
+        Instead of using two <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s or one single-placeholder <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for two brackets, you probably want to use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, because some functions treat it specially.<br />
+        Especially when typing with the physical keyboard, the need for special treatment arises: when typing '(', '1', '+', 'x', ')', '/', 'x' you probably want <code>\frac{1+x}{x}</code> as output - so, without brackets.<br />
+        A trick to do this, is: let pressing '(' result in <a href="#Insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing ')' result in a <a href="#MoveRight" class="mke-member">MoveRight</a> and let pressing '/' result in <a href="#InsertWithEncapsulateCurrent" class="mke-member">InsertWithEncapsulateCurrent</a> (with <code>Options.DeleteOuterRoundBracketsIfAny</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
+    </p>
+    
+    <h3><span id="MatrixNode">MatrixNode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/MatrixNode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=MatrixNode">Search occurrences</a>
+    </div>
+    <p>
+        The <a href="#MatrixNode" class="mke-member">MatrixNode</a> has ready-to-use left/right/up/down navigation.<br />
+        The first constructor argument is the type of matrix, for example "pmatrix" for a matrix with round brackets on the left and right. Search the documentation of your typesetting library (for example KaTeX or MathJax) for other matrix types.
+    </p>
+    
+    
+    <h2>3. Adding to KeyboardMemory</h2>
+    <p>Whether you're using MathKeyboardEngine with virtual keys, physical keys or both, you'll need to add nodes to a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance via one of the four insert functions.</p>
+    
+    <h3><span id="Insert">Insert</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Insertion/Insert.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=Insert">Search occurrences</a>
+    </div>
+    <p>You could use only this function and skip the other insert functions, but users "expect" certain behaviour - for example at "2 to the power of 10":<br />
+    not:<br />
+    <pre>
+        <code>Insert(new AscendingBranchingNode("", "^{", "}"));</code>
+        <code>Insert(new DigitNode("2"));</code>
+        <code>MoveRight(k);</code>
+        <code>Insert(new DigitNode("1"));</code>
+        <code>Insert(new DigitNode("0"));</code>
+    </pre>
+    but:
+    <pre>
+        <code>Insert(new DigitNode("2"));</code>
+        <code>InsertWithEncapsulateCurrent(new AscendingBranchingNode("", "^{", "}"));</code>
+        <code>Insert(new DigitNode("1"));</code>
+        <code>Insert(new DigitNode("0"));</code>
+    </pre>
+    Both result in the (ViewMode)LaTeX <code>2^{10}</code>.
+    </p>
+    
+    <h3><span id="InsertWithEncapsulateCurrent">InsertWithEncapsulateCurrent</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Insertion/InsertWithEncapsulateCurrent.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=InsertWithEncapsulateCurrent">Search occurrences</a>
+    </div>
+    
+    <h3><span id="InsertWithEncapsulateSelection">InsertWithEncapsulateSelection</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Insertion/InsertWithEncapsulateSelection.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=InsertWithEncapsulateSelection">Search occurrences</a>
+    </div>
+    <p>Let's say you've typed 1 + x and you then* decide that this should become the numerator of a fraction. In that case, you can use <a href="#SelectLeft" class="mke-member">SelectLeft</a> and call <a href="#InsertWithEncapsulateSelection" class="mke-member">InsertWithEncapsulateSelection</a> to insert a "fraction node".</p>
+    <p>*There are multiple ways to do this more efficiently.</p>
+    <h3><span id="InsertWithEncapsulateSelectionAndPrevious">InsertWithEncapsulateSelectionAndPrevious</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Insertion/InsertWithEncapsulateSelectionAndPrevious.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=InsertWithEncapsulateSelectionAndPrevious">Search occurrences</a>
+    </div>
+    <p>Let's say you wanted to type "2 to the power of 10", but you type "210". Now you can (enter "selection mode" and) use <a href="#SelectLeft" class="mke-member">SelectLeft</a> twice, followed by <a href="#InsertWithEncapsulateSelectionAndPrevious" class="mke-member">InsertWithEncapsulateSelectionAndPrevious</a> to get what you intended to get.</p>
+    
+    
+    
+    <h2>4. Deleting from KeyboardMemory</h2>
+    
+    <h3><span id="DeleteCurrent">DeleteCurrent</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Deletion/DeleteCurrent.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=DeleteCurrent">Search occurrences</a>
+    </div>
+    <p>A backwards delete, with special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.</p>
+    
+    <h3><span id="DeleteSelection">DeleteSelection</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Deletion/DeleteSelection.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=DeleteSelection">Search occurrences</a>
+    </div>
+    <p>To be used together with - for example - <a href="#SelectLeft" class="mke-member">SelectLeft</a>. Very probably, users will use <a href="#DeleteCurrent" class="mke-member">DeleteCurrent</a> multiple times instead. But if you're in selection and the delete key is pressed, this function provides the expected behaviour.</p>
+    
+    
+    
+    <h2>5. Navigation</h2>
+
+    <h3><span id="MoveLeft">MoveLeft</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Navigation/MoveLeft.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=MoveLeft">Search occurrences</a>
+    </div>
+    <p>Moves the cursor to the left.</p>
+    
+    <h3><span id="MoveRight">MoveRight</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Navigation/MoveRight.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=MoveRight">Search occurrences</a>
+    </div>
+    <p>Moves the cursor to the right.</p>
+    
+    <h3><span id="MoveDown">MoveDown</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Navigation/MoveDown.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=MoveDown">Search occurrences</a>
+    </div>
+    <p>The <a href="#MatrixNode" class="mke-member">MatrixNode</a>, <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> implement <a href="#BranchingNode" class="mke-member">BranchingNode</a>'s <code>GetMoveDownSuggestion</code> and therefore support moving the cursor down. You can also extend the <a href="#BranchingNode" class="mke-member">BranchingNode</a> class to support other up/down-navigation patterns.</p>
+    
+    <h3><span id="MoveUp">MoveUp</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Navigation/MoveUp.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=MoveUp">Search occurrences</a>
+    </div>
+    <p>The <a href="#MatrixNode" class="mke-member">MatrixNode</a>, <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> implement <a href="#BranchingNode" class="mke-member">BranchingNode</a>'s <code>GetMoveUpSuggestion</code>, and therefore support moving the cursor up. You can also extend the <a href="#BranchingNode" class="mke-member">BranchingNode</a> class to support other up/down-navigation patterns.</p>
+
+    
+    
+    
+    <h2>6. Selection mode</h2>
+    <p>Several functions to be used together with - for example - <a href="#InsertWithEncapsulateSelection" class="mke-member">InsertWithEncapsulateSelection</a>, <a href="#InsertWithEncapsulateSelectionAndPrevious" class="mke-member">InsertWithEncapsulateSelectionAndPrevious</a> or <a href="#DeleteSelection" class="mke-member">DeleteSelection</a>.<br />
+    Of course you can decide not to use any of the "Selection" functions if you don't need the functionality.</p>
+    
+    <h3><span id="SelectLeft">SelectLeft</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Selection/SelectLeft.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=SelectLeft">Search occurrences</a>
+    </div>
+    <p>Do or undo a (highlighted) selection of parts of what you've typed. Set your preferred highlighting color in the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>.</p>
+    
+    <h3><span id="SelectRight">SelectRight</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Selection/SelectRight.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=SelectRight">Search occurrences</a>
+    </div>
+    <p>Do or undo a (highlighted) selection of parts of what you've typed. Set your preferred highlighting color in the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>.</p>
+    
+    <h3><span id="EnterSelectionMode">EnterSelectionMode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Selection/EnterSelectionMode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=EnterSelectionMode">Search occurrences</a>
+    </div>
+    <p>
+        To make your virtual math keyboard culture-independent, you may want to have a "enter selection mode" key that has no text, but has the same background color as the highlighting color as configured via the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>'s <code>SelectionHightlightStart</code> and <code>SelectionHightlightEnd</code>.<br />
+        Note that the KaTeX example uses a <code>colorbox</code> and the MathJax example uses a <code>bbox</code>.
+    </p>
+    
+    <h3><span id="LeaveSelectionMode">LeaveSelectionMode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Selection/LeaveSelectionMode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=LeaveSelectionMode">Search occurrences</a>
+    </div>
+    <p>
+        Forgetting to call <a href="#LeaveSelectionMode" class="mke-member">LeaveSelectionMode</a> may lead to weird behaviour... for example at <a href="#Insert" class="mke-member">insert</a>ing a new <a href="#TreeNode" class="mke-member">TreeNode</a> while still being in selection mode.
+    </p>
+    
+    <h3><span id="InSelectionMode">InSelectionMode</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/blob/main/MathKeyboardEngine/Methods/Selection/InSelectionMode.cs">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp/search?q=InSelectionMode">Search occurrences</a>
+    </div>
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="center">If you've found an error on this page, please <a target="_blank" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.github.io/blob/main/docs/csharp/0.1/index.html">report it or open a pull request</a>.</div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="footer-note">
+        <hr/>
+        See the <a href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp">MathKeyboardEngine GitHub repository</a> for more information.
+    </div>
+  </body>
+</html>
