@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <!-- MathJax specific code END -->
     <script type="module" type="text/javascript">
-      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.2.0/dist/MathKeyboardEngine.es2017-esm.min.js';
+      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.2.1/dist/MathKeyboardEngine.es2017-esm.min.js';
       let latexConfiguration = new mke.LatexConfiguration();
       let keyboardMemory = new mke.KeyboardMemory();
       const supportsSelectionMode = 'supportsSelectionMode';
@@ -347,6 +347,7 @@
           } else if (pureLatexElement.innerText.length > 0) {
             if (key == 'Space' || key == 'Enter' || key == 'Escape') {
               const pureLatex = pureLatexElement.innerText;
+              // prettier-ignore
               const node = pureLatex == '\\frac' ? getFractionNode()
                   : pureLatex == '\\binom' ? getBinomialNode()
                   : pureLatex == '\\sqrt' ? getSquareRootNode()
@@ -387,6 +388,11 @@
 
       html {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none; /* supported by Chrome and Opera */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
       }
 
       h1 {
@@ -583,9 +589,9 @@
       <div id="infty"></div>
     </div>
     <p>
-      Note: if you have a physical keyboard attached, you can use that too.<br/>
-      Use a backslash for pure LaTeX commands.<br/>
-      Use Shift + Left for selection mode.
+      Note: if you have a physical keyboard attached, you can use that too.<br />
+      Use a backslash for pure LaTeX commands.<br />
+      Use Shift + Left for selection mode (or use the blue key).
     </p>
     <div class="footer">
       <a href="https://github.com/MathKeyboardEngine/MathKeyboardEngine#readme">View on GitHub (JavaScript)</a>
