@@ -16,7 +16,7 @@
       // KaTeX specific code START
       import katex from 'https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.mjs';
       // KaTeX specific code END
-      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.2.1/dist/MathKeyboardEngine.es2017-esm.min.js';
+      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v0.2.2/dist/MathKeyboardEngine.es2017-esm.min.js';
       let latexConfiguration = new mke.LatexConfiguration();
       let keyboardMemory = new mke.KeyboardMemory();
       const supportsSelectionMode = 'supportsSelectionMode';
@@ -231,6 +231,11 @@
       }
 
       function displayResult() {
+        if (keyboardMemory.current instanceof mke.Placeholder && keyboardMemory.current.nodes.length == 0) {
+          latexConfiguration.activePlaceholderShape = String.raw`\blacksquare`;
+        } else {
+          latexConfiguration.activePlaceholderShape = '|';
+        }
         let editModeLatex = mke.getEditModeLatex(keyboardMemory, latexConfiguration);
         typesetLatexInOutputBox(editModeLatex, document.getElementById('typesetEditModeLatex'));
 
