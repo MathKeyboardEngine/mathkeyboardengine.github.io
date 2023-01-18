@@ -287,7 +287,7 @@
     <p>
         Instead of using two <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s or one single-placeholder <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for two brackets, you probably want to use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, because some functions treat it specially.<br />
         Especially when typing with the physical keyboard, the need for special treatment arises: when typing '(', '1', '+', 'x', ')', '/', 'x' you probably want <code>\frac{1+x}{x}</code> as output - so, without brackets.<br />
-        A trick to do this, is: let pressing '(' result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing ')' result in a <a href="#move_right" class="mke-member">move_right</a> and let pressing '/' result in <a href="#insert_with_encapsulate_current" class="mke-member">insert_with_encapsulate_current</a> (with the config <code>{ deleteOuterRoundBracketsIfAny: true }</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
+        A trick to do this, is: let pressing '(' result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing ')' result in a <a href="#move_right" class="mke-member">move_right</a> and let pressing '/' result in <a href="#insert_with_encapsulate_current" class="mke-member">insert_with_encapsulate_current</a> (with the argument <code>delete_outer_round_brackets_if_any = True</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
     </p>
     
     <h3><span id="MatrixNode">MatrixNode</span></h3>
@@ -312,20 +312,20 @@
     <p>You could use only this function and skip the other insert functions, but users "expect" certain behaviour - for example at "2 to the power of 10":<br />
     not:<br />
     <pre>
-        <code>insert(k, AscendingBranchingNode('', '^{', '}'));</code>
-        <code>insert(k, DigitNode('2'));</code>
-        <code>move_right(k);</code>
-        <code>insert(k, DigitNode('1'));</code>
-        <code>insert(k, DigitNode('0'));</code>
+        <code>insert(k, AscendingBranchingNode('', '^{', '}'))</code>
+        <code>insert(k, DigitNode('2'))</code>
+        <code>move_right(k)</code>
+        <code>insert(k, DigitNode('1'))</code>
+        <code>insert(k, DigitNode('0'))</code>
     </pre>
     but:
     <pre>
-        <code>insert(k, DigitNode('2'));</code>
-        <code>insert_with_encapsulate_current(k, AscendingBranchingNode('', '^{', '}'));</code>
-        <code>insert(k, DigitNode('1'));</code>
-        <code>insert(k, DigitNode('0'));</code>
+        <code>insert(k, DigitNode('2'))</code>
+        <code>insert_with_encapsulate_current(k, AscendingBranchingNode('', '^{', '}'))</code>
+        <code>insert(k, DigitNode('1'))</code>
+        <code>insert(k, DigitNode('0'))</code>
     </pre>
-    Both result in the (ViewMode)LaTeX <code>2^{10}</code>.
+    Both result in the (view_mode_)latex <code>2^{10}</code>.
     </p>
     
     <h3><span id="insert_with_encapsulate_current">insert_with_encapsulate_current</span></h3>
@@ -426,7 +426,7 @@
     </div>
     <p>
         To make your virtual math keyboard culture-independent, you may want to have a "enter selection mode" key that has no text, but has the same background color as the highlighting color as configured via the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>'s <code>selection_hightlight_start</code> and <code>selection_hightlight_end</code>.<br />
-        Note that the KaTeX example uses a <code>colorbox</code> and the MathJax example uses a <code>bbox</code>.
+        Note that the command for coloring may differ per typesetting library - for example KaTeX uses a <code>colorbox</code> and MathJax example uses a <code>bbox</code>.
     </p>
     
     <h3><span id="leave_selection_mode">leave_selection_mode</span></h3>
