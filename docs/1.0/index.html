@@ -80,6 +80,12 @@
             text-align: right;
             font-size: 0.8rem;
         }
+
+        kbd {
+            border: 2px solid gray;
+            font-size: 1rem;
+            padding: 2px;
+        }
     </style>
   </head>
   <body>
@@ -144,7 +150,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/SyntaxTreeComponents/Placeholder/Placeholder.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=Placeholder">Search occurrences</a>
     </div>
-    <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type 'a', '+' and '1', then the syntax tree consists of one <a href="#Placeholder" class="mke-member">Placeholder</a> (<a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a>'s <code>syntaxTreeRoot</code>) and three <a href="#TreeNode" class="mke-member">TreeNode</a>s:<br />
+    <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type <kbd>a</kbd>, <kbd>+</kbd> and <kbd>1</kbd>, then the syntax tree consists of one <a href="#Placeholder" class="mke-member">Placeholder</a> (<a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a>'s <code>syntaxTreeRoot</code>) and three <a href="#TreeNode" class="mke-member">TreeNode</a>s:<br />
     <div class="drawing-Placeholder">
         <div class="drawing-TreeNode">
             a
@@ -290,8 +296,8 @@
     </div>
     <p>
         Instead of using two <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s or one single-placeholder <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for two brackets, you probably want to use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, because some functions treat it specially.<br />
-        Especially when typing with the physical keyboard, the need for special treatment arises: when typing '(', '1', '+', 'x', ')', '/', 'x' you probably want <code>\frac{1+x}{x}</code> as output - so, without brackets.<br />
-        A trick to do this, is: let pressing '(' result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing ')' result in a <a href="#moveRight" class="mke-member">moveRight</a> and let pressing '/' result in <a href="#insertWithEncapsulateCurrent" class="mke-member">insertWithEncapsulateCurrent</a> (with the config <code>{ deleteOuterRoundBracketsIfAny: true }</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
+        Especially when typing with the physical keyboard, the need for special treatment arises: when typing <kbd>(</kbd> <kbd>1</kbd> <kbd>+</kbd> <kbd>x</kbd> <kbd>)</kbd> <kbd>/</kbd> <kbd>x</kbd> you probably want <code>\frac{1+x}{x}</code> as output - so, without brackets.<br />
+        A trick to do this, is: let pressing <bkd>(</bkd> result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing <bkd>)</bkd> result in a <a href="#moveRight" class="mke-member">moveRight</a> and let pressing <kbd>/</kbd> result in <a href="#insertWithEncapsulateCurrent" class="mke-member">insertWithEncapsulateCurrent</a> (with the config <code>{ deleteOuterRoundBracketsIfAny: true }</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
     </p>
     
     <h3><span id="MatrixNode">MatrixNode</span></h3>
@@ -337,6 +343,7 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/KeyboardEngine/Functions/Insertion/insertWithEncapsulateCurrent.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=insertWithEncapsulateCurrent">Search occurrences</a>
     </div>
+    <p>See the explanation at <a href="#insert" class="mke-member">insert</a>.</p>
     
     <h3><span id="insertWithEncapsulateSelection">insertWithEncapsulateSelection</span></h3>
     <div class="external-links">
@@ -361,14 +368,20 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/KeyboardEngine/Functions/Deletion/deleteLeft.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=deleteLeft">Search occurrences</a>
     </div>
-    <p>A delete to the left of the cursor, with special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.</p>
+    <p>
+        Deletes a node on the left of the cursor, like the <kbd>Backspace</kbd> key on most physical keyboards - on Mac <kbd>Delete</kbd>.<br/>
+        This function has special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.
+    </p>
     
     <h3><span id="deleteRight">deleteRight</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/blob/main/src/KeyboardEngine/Functions/Deletion/deleteRight.ts">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=deleteRight">Search occurrences</a>
     </div>
-    <p>A delete to the right of the cursor, with special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.</p>
+    <p>
+        Deletes a node on the right of the cursor, like the <kbd>Delete</kbd> key on most physical keyboards - on Mac <kbd>fn</kbd> in tandem with <kbd>Delete</kbd>.<br/>
+        This function has special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.
+    </p>
 
     <h3><span id="deleteSelection">deleteSelection</span></h3>
     <div class="external-links">
