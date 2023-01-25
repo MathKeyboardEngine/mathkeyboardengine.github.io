@@ -8,7 +8,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>MathKeyboardEngine Documentation v0.1 (Python)</title>
+    <title>MathKeyboardEngine Documentation (Python)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
         @media (prefers-color-scheme: dark) {
@@ -77,27 +77,22 @@
             display: inline-block;
         }
 
+        .previous-docs {
+            text-align: right;
+            font-size: 0.8rem;
+        }
+
         kbd {
             border: 2px solid gray;
             font-size: 1rem;
             padding: 2px;
         }
-
-        .warning {
-            text-align: center;
-            background-color: yellow;
-            color: black;
-        }
     </style>
   </head>
   <body>
 
-    <h1>Documentation v0.1 (Python)</h1>
-    <div class="warning">
-        This is documenation of version 0.1. Go to the <strong><a href="https://mathkeyboardengine.github.io/docs/python/latest">latest version</a></strong>.<br/>
-        Links from this page to declarations lead to an <a href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.1">older version of the repository on branch "v0.1"</a>.<br/>
-        Other links - for example for searching occurrences - lead to the new repository.
-    </div>
+    <h1>Documentation (Python)</h1>
+    <p class="previous-docs">Previous versions: <a href="https://mathkeyboardengine.github.io/docs/python/0.1/">v0.1</a>.</p>
     <p>This page shows all <strong>MathKeyboardEngine for Python</strong> classes and functions that you can directly use.
         Helper functions that are not avaible from the root namespace of the library, are not mentioned.
         This documentation is not exhaustive.
@@ -369,19 +364,31 @@
     
     <h2>4. Deleting from KeyboardMemory</h2>
     
-    <h3><span id="delete_current">delete_current</span></h3>
+    <h3><span id="delete_left">delete_left</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/deletion/delete_current.py">View declaration</a>
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=delete_current">Search occurrences</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/deletion/delete_left.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=delete_left">Search occurrences</a>
     </div>
-    <p>A backwards delete, with special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.</p>
+    <p>
+        Deletes a node on the left of the cursor, like the <kbd>Backspace</kbd> key on most physical keyboards - on Mac <kbd>Delete</kbd>.<br/>
+        This function has special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.
+    </p>
     
+    <h3><span id="delete_right">delete_right</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/deletion/delete_right.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=delete_right">Search occurrences</a>
+    </div>
+    <p>
+        Deletes a node on the right of the cursor, like the <kbd>Delete</kbd> key on most physical keyboards - on Mac <kbd>fn</kbd> in tandem with <kbd>Delete</kbd>.<br/>
+        This function has special behaviour (depending on the position of the cursor) for <a href="#BranchingNode" class="mke-member">BranchingNode</a>s.
+    </p>    
     <h3><span id="delete_selection">delete_selection</span></h3>
     <div class="external-links">
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/deletion/delete_selection.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=delete_selection">Search occurrences</a>
     </div>
-    <p>To be used together with - for example - <a href="#select_left" class="mke-member">select_left</a>. Very probably, users will use <a href="#delete_current" class="mke-member">delete_current</a> multiple times instead. But if you're in selection and the delete key is pressed, this function provides the expected behaviour.</p>
+    <p>To be used together with - for example - <a href="#select_left" class="mke-member">select_left</a>. Very probably, users will use <a href="#delete_left" class="mke-member">delete_left</a> multiple times instead. But if you're in selection and the delete key is pressed, this function provides the expected behaviour.</p>
     
     
     

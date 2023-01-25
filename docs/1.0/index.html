@@ -76,6 +76,7 @@
 
             display: inline-block;
         }
+        
         .previous-docs {
             text-align: right;
             font-size: 0.8rem;
@@ -297,7 +298,7 @@
     <p>
         Instead of using two <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s or one single-placeholder <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> for two brackets, you probably want to use the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, because some functions treat it specially.<br />
         Especially when typing with the physical keyboard, the need for special treatment arises: when typing <kbd>(</kbd> <kbd>1</kbd> <kbd>+</kbd> <kbd>x</kbd> <kbd>)</kbd> <kbd>/</kbd> <kbd>x</kbd> you probably want <code>\frac{1+x}{x}</code> as output - so, without brackets.<br />
-        A trick to do this, is: let pressing <bkd>(</bkd> result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing <bkd>)</bkd> result in a <a href="#moveRight" class="mke-member">moveRight</a> and let pressing <kbd>/</kbd> result in <a href="#insertWithEncapsulateCurrent" class="mke-member">insertWithEncapsulateCurrent</a> (with the config <code>{ deleteOuterRoundBracketsIfAny: true }</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
+        A trick to do this, is: let pressing <kbd>(</kbd> result in <a href="#insert" class="mke-member">insert</a>ing the <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a>, let pressing <kbd>)</kbd> result in a <a href="#moveRight" class="mke-member">moveRight</a> and let pressing <kbd>/</kbd> result in <a href="#insertWithEncapsulateCurrent" class="mke-member">insertWithEncapsulateCurrent</a> (with the config <code>{ deleteOuterRoundBracketsIfAny: true }</code>) for a fraction node (as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>).
     </p>
     
     <h3><span id="MatrixNode">MatrixNode</span></h3>

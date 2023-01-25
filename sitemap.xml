@@ -18,7 +18,10 @@
   <url>
     <loc>https://mathkeyboardengine.github.io/docs/csharp/0.1/</loc>
   </url>
-    <url>
+  <url>
+    <loc>https://mathkeyboardengine.github.io/docs/python/0.2/</loc>
+  </url>
+  <url>
     <loc>https://mathkeyboardengine.github.io/docs/python/0.1/</loc>
   </url>
 </urlset>
