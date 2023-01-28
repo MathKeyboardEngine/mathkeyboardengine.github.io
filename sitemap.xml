@@ -4,24 +4,18 @@
     <loc>https://mathkeyboardengine.github.io/</loc>
   </url>
   <url>
-    <loc>https://mathkeyboardengine.github.io/live-examples/KaTeX.html</loc>
-  </url>
-  <url>
-    <loc>https://mathkeyboardengine.github.io/live-examples/MathJax.html</loc>
-  </url>
-    <url>
     <loc>https://mathkeyboardengine.github.io/docs/1.0/</loc>
   </url>
   <url>
-    <loc>https://mathkeyboardengine.github.io/docs/0.1/</loc>
-  </url>
-  <url>
-    <loc>https://mathkeyboardengine.github.io/docs/csharp/0.1/</loc>
+    <loc>https://mathkeyboardengine.github.io/docs/csharp/0.2/</loc>
   </url>
   <url>
     <loc>https://mathkeyboardengine.github.io/docs/python/0.2/</loc>
   </url>
   <url>
-    <loc>https://mathkeyboardengine.github.io/docs/python/0.1/</loc>
+    <loc>https://mathkeyboardengine.github.io/live-examples/KaTeX.html</loc>
+  </url>
+  <url>
+    <loc>https://mathkeyboardengine.github.io/live-examples/MathJax.html</loc>
   </url>
 </urlset>
