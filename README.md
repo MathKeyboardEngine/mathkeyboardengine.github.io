@@ -1,5 +1,3 @@
-This repository is only used for hosting documentation and Live examples at https://mathkeyboardengine.github.io.
+This repository is only used for hosting documentation and live examples at https://mathkeyboardengine.github.io.
 
-For the main repositories, see
-- [MathKeyboardEngine for JavaScript](https://github.com/MathKeyboardEngine/MathKeyboardEngine#readme)
-- [MathKeyboardEngine for C#](https://github.com/MathKeyboardEngine/MathKeyboardEngine.CSharp#readme)
+For more information, see [MathKeyboardEngine](https://github.com/MathKeyboardEngine).
