@@ -240,7 +240,7 @@
     
     <h3><span id="insert">insert</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/insertion/insert.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insert.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insert">Search occurrences</a>
     </div>
     <p>You could use only this method and skip the other insert methods, but users "expect" certain behaviour - for example at "2 to the power of 10":<br />
@@ -264,21 +264,21 @@
     
     <h3><span id="insertWithEncapsulateCurrent">insertWithEncapsulateCurrent</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/insertion/insertWithEncapsulateCurrent.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateCurrent.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insertWithEncapsulateCurrent">Search occurrences</a>
     </div>
     <p>See the explanation at <a href="#insert" class="mke-member">insert</a>.</p>
     
     <h3><span id="insertWithEncapsulateSelection">insertWithEncapsulateSelection</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/insertion/insertWithEncapsulateSelection.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelection.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insertWithEncapsulateSelection">Search occurrences</a>
     </div>
     <p>Let's say you've typed 1 + x and you then* decide that this should become the numerator of a fraction. In that case, you can use <a href="#selectLeft" class="mke-member">selectLeft</a> and call <a href="#insertWithEncapsulateSelection" class="mke-member">insertWithEncapsulateSelection</a> to insert a "fraction node".</p>
     <p>*There are multiple ways to do this more efficiently.</p>
     <h3><span id="insertWithEncapsulateSelectionAndPrevious">insertWithEncapsulateSelectionAndPrevious</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/insertion/insertWithEncapsulateSelectionAndPrevious.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelectionAndPrevious.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insertWithEncapsulateSelectionAndPrevious">Search occurrences</a>
     </div>
     <p>Let's say you wanted to type "2 to the power of 10", but you type "210". Now you can (enter "selection mode" and) use <a href="#selectLeft" class="mke-member">selectLeft</a> twice, followed by <a href="#insertWithEncapsulateSelectionAndPrevious" class="mke-member">insertWithEncapsulateSelectionAndPrevious</a> to get what you intended to get.</p>
