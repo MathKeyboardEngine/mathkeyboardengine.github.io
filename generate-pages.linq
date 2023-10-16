@@ -2,7 +2,7 @@
 
 readonly UTF8Encoding _encoding = new UTF8Encoding(true);
 readonly DirectoryInfo _websiteFolder = new System.IO.DirectoryInfo(@"C:\_\Repos\mathkeyboardengine.github.io");
-readonly string version = "v1.1.0-alpha.3";
+readonly string version = "v1.1.0-alpha.4";
 
 void Main()
 {	

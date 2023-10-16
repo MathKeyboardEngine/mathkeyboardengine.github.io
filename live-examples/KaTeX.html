@@ -16,7 +16,7 @@
       // KaTeX specific code START
       import katex from 'https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.mjs';
       // KaTeX specific code END
-      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v1.1.0-alpha.3/dist/MathKeyboardEngine.es2017-esm.min.js';
+      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v1.1.0-alpha.4/dist/MathKeyboardEngine.es2017-esm.min.js';
       let latexConfiguration = new mke.LatexConfiguration();
       let keyboardMemory = new mke.KeyboardMemory();
       const supportsSelectionMode = 'supportsSelectionMode';
@@ -382,12 +382,8 @@
       }
     
       var parserConfig = new mke.LatexParserConfiguration();
-      parserConfig.descendingBranchingNodeSlashCommandsWithTwoPairsOfBrackets = [
-        String.raw`\frac{}{}`, 
-        String.raw`\binom{}{}`, 
-        String.raw`sqrt[]{}`
-      ];
-      console.log(inputToParse);
+      parserConfig.preferRoundBracketsNode = true;
+      parserConfig.decimalSeparator = '.';
       inputToParse.onkeydown = (e) => {
         if (e.code == 'Enter') {
           const nodes = mke.parseLatex(inputToParse.value, latexConfiguration, parserConfig).syntaxTreeRoot.nodes;
