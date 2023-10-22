@@ -402,7 +402,7 @@
         </ul>
         The function <a href="#parseLatex" class="mke-member">parseLatex</a> returns a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance that contains the syntax tree of parsed LaTeX.
     </p>
-    <p>For adding the result to an existing `KeyboardMemory` instance, use something like 
+    <p>For adding the result to an existing <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance, use something like 
         <pre>
     <code>const parsedNodes = parsedKeyboardMemory.syntaxTreeRoot.nodes;</code>
     <code>insert(keyboardMemory, parsedNodes);</code>
@@ -435,11 +435,11 @@
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine/search?q=LatexParserConfiguration">Search occurrences</a>
     </div>
     <p>
-        You can use the default settings and call the parser like this:
+        You can use the default settings and call the parser without <a href="#LatexParserConfiguration" class="mke-member">LatexParserConfiguration</a> like this:
         <pre>
-    <code>const keyboardMemory = mke.parseLatex(latexString, new mke.LatexParserConfiguration());</code>
+    <code>const keyboardMemory = mke.parseLatex(latexString);</code>
         </pre>
-        For most use cases, this is probably enough, because:
+        For most use cases this is probably enough, because:
         <ul>
             <li>the digits 0, 1, ..., 9 are understood as <a href="#DigitNode" class="mke-member">DigitNode</a>s,</li>
             <li>the strings <code>.</code> and <code>{,}</code> are understood as <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>s,</li>
