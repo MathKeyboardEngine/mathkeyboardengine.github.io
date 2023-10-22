@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <!-- MathJax specific code END -->
     <script type="module">
-      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v1.1.0-alpha.4/dist/MathKeyboardEngine.es2017-esm.min.js';
+      import * as mke from 'https://cdn.jsdelivr.net/npm/mathkeyboardengine@v1.1.0/dist/MathKeyboardEngine.es2017-esm.min.js';
       let latexConfiguration = new mke.LatexConfiguration();
       let keyboardMemory = new mke.KeyboardMemory();
       const supportsSelectionMode = 'supportsSelectionMode';
@@ -70,7 +70,8 @@
         }
         displayResult();
       };
-      const getDecimalSeparatorNode = () => new mke.DecimalSeparatorNode(() => (decimalSeparatorTypeElement.innerText == 'decimal comma' ? '{,}' : '.'));
+      const getDecimalSeparatorPreference = () => (decimalSeparatorTypeElement.innerText == 'decimal comma' ? '{,}' : '.');
+      const getDecimalSeparatorNode = () => new mke.DecimalSeparatorNode(getDecimalSeparatorPreference);
       registerNodeKey('decimalSeparator', getDecimalSeparatorNode);
       registerNodeKey('equal', () => new mke.StandardLeafNode('='));
       registerNodeKey('notEqual', () => new mke.StandardLeafNode(String.raw`\neq`));
@@ -372,15 +373,15 @@
       inputToParse.onpaste =
       () => {
         const value = inputToParse.value;
-        inputMirror.innerText = value == '' ? '' : inputToParse.value + ' (press Enter)';
+        inputMirror.innerText = value.length > 2 ? inputToParse.value + ' ----> press Enter' : value;
       }
     
       var parserConfig = new mke.LatexParserConfiguration();
       parserConfig.preferRoundBracketsNode = true;
-      parserConfig.decimalSeparator = '.';
+      parserConfig.preferredDecimalSeparator = getDecimalSeparatorPreference;
       inputToParse.onkeydown = (e) => {
         if (e.code == 'Enter') {
-          const nodes = mke.parseLatex(inputToParse.value, latexConfiguration, parserConfig).syntaxTreeRoot.nodes;
+          const nodes = mke.parseLatex(inputToParse.value, parserConfig).syntaxTreeRoot.nodes;
           mke.insert(keyboardMemory, nodes);
           displayResult();
           inputToParse.value = '';
@@ -620,7 +621,7 @@
       Use Shift + Left for selection mode (or use the blue key).
     </p>
     
-    <h2>Experimental: parseLatex</h2>
+    <h2>Parse a LaTeX string</h2>
     <input id="inputToParse" type="text" placeholder="Type or paste + press Enter" class="disable-physical-keypress-math-input-when-focused" />
     
     <div class="footer">
