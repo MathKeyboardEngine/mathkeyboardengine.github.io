@@ -15,11 +15,7 @@
   <body>
 
     <h1>Documentation (Swift)</h1>
-    <div class="warning">
-        This is documenation of version 0.1. Go to the <strong><a href="https://mathkeyboardengine.github.io/docs/swift/latest">latest version</a></strong>.<br/>
-        Links from this page to declarations lead to an <a href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/tree/v0.1">older version of the repository on branch "v0.1"</a>.<br/>
-        Other links - for example for searching occurrences - lead to the new repository.
-    </div>
+    <p class="previous-docs">Previous versions: <a href="https://mathkeyboardengine.github.io/docs/swift/0.1/">v0.1</a>.</p>
     <p>This page shows all <strong>MathKeyboardEngine for Swift</strong> classes and methods that you can directly use.
         Helper methods that are not exposed by the library, are not mentioned.
         This documentation is not exhaustive.
@@ -40,14 +36,14 @@
     
     <h3><span id="KeyboardMemory">KeyboardMemory</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/KeyboardMemory.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/KeyboardMemory.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=KeyboardMemory">Search occurrences</a>
     </div>
     <p>If you type into a 'math textbox', you use a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance for that textbox. The <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class will hold the syntax tree of what you've typed and what the <code>Current</code> position is of the cursor. If you'd like to have multiple math textboxes on one page, then use multple instances of the <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class, each linked to a single 'textbox'.</p>
 
     <h3><span id="LatexConfiguration">LatexConfiguration</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/LatexConfiguration.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/LatexConfiguration.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=LatexConfiguration">Search occurrences</a>
     </div>
     <p>In the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a> class, the cursor is called the "active placeholder".
@@ -61,10 +57,10 @@
         <span id="getViewModeLatex">getViewModeLatex</span>
     </h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/GetLatex/getEditModeLatex.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/GetLatex/getEditModeLatex.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=getEditModeLatex">Search occurrences</a>
         <br />
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/GetLatex/getViewModeLatex.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/GetLatex/getViewModeLatex.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=getViewModeLatex">Search occurrences</a>
     </div>
     <p>
@@ -76,7 +72,7 @@
     <h2>2. Syntax tree components</h2>
     <h3><span id="Placeholder">Placeholder</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Placeholder/Placeholder.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Placeholder/Placeholder.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=Placeholder">Search occurrences</a>
     </div>
     <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type <kbd>a</kbd>, <kbd>+</kbd> and <kbd>1</kbd>, then the syntax tree consists of one <a href="#Placeholder" class="mke-member">Placeholder</a> (<a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a>'s <code>SyntaxTreeRoot</code>) and three <a href="#TreeNode" class="mke-member">TreeNode</a>s:<br />
@@ -93,14 +89,14 @@
     </div>
     <h3><span id="TreeNode">TreeNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/TreeNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/TreeNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=TreeNode">Search occurrences</a>
     </div>
     <p>A <a href="#TreeNode" class="mke-member">TreeNode</a> can be as simple as '3', which is called a <a href="#LeafNode" class="mke-member">LeafNode</a> (it has no <a href="#Placeholder" class="mke-member">Placeholder</a>s). A fraction has two <a href="#Placeholder" class="mke-member">Placeholder</a>s: the numerator and the denominator. If a <a href="#TreeNode" class="mke-member">TreeNode</a> has <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s, it is called a <a href="#BranchingNode" class="mke-member">BranchingNode</a>.</p>
         
     <h3><span id="LeafNode">LeafNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/LeafNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/LeafNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=LeafNode">Search occurrences</a>
     </div>
     <p>The base class for all <a href="#TreeNode" class="mke-member">TreeNode</a>s that have no <a href="#Placeholder" class="mke-member">Placeholder</a>s. You'll probably not use this class directly in your code, unless you would like to create your own SyntaxTree-manipulating methods.</p>
@@ -110,17 +106,17 @@
     </div>
     <h3><span id="StandardLeafNode">StandardLeafNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/StandardLeafNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/StandardLeafNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=StandardLeafNode">Search occurrences</a>
     </div>
     <p>The <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a> should be used for everything that has no <a href="#Placeholder" class="mke-member">Placeholder</a>, except if it is part of a number with digits (such as 12.75, for which you should use <a href="#DigitNode" class="mke-member">DigitNode</a>s and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>). So, use this for variables x, y, z, for arrows, and more.</p>
     
     <h3><span id="DigitNode">DigitNode</span> and <span id="DecimalSeparatorNode">DecimalSeparatorNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/DigitNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/DigitNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=DigitNode">Search occurrences</a>
         <br />
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/DecimalSeparatorNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/LeafNodes/DecimalSeparatorNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=DecimalSeparatorNode">Search occurrences</a>
     </div>
     <p>Use the <a href="#DigitNode" class="mke-member">DigitNode</a> for composing a number with 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 (and maybe other symbols if you like to type not in base 10, but in - for example - base 12) and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a> for its decimal separator ('.' or ',' in some cultures).<br />
@@ -128,7 +124,7 @@
     
     <h3><span id="BranchingNode">BranchingNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/BranchingNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/Base/BranchingNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=BranchingNode">Search occurrences</a>
     </div>
     <p>The base class for all <a href="#TreeNode" class="mke-member">TreeNode</a>s that have <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. You'll probably not use this class directly in your code, unless you would like to create your own SyntaxTree-manipulating methods.</p>
@@ -183,7 +179,7 @@
 
     <h3><span id="StandardBranchingNode">StandardBranchingNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/StandardBranchingNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/StandardBranchingNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=StandardBranchingNode">Search occurrences</a>
     </div>
     <p>The <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> is a <a href="#BranchingNode" class="mke-member">BranchingNode</a> with <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. The number of <a href="#Placeholder" class="mke-member">Placeholder</a>s that is created, depends on the number of constructor arguments as follows:<br />
@@ -200,10 +196,10 @@
     
     <h3><span id="AscendingBranchingNode">AscendingBranchingNode</span> and <span id="DescendingBranchingNode">DescendingBranchingNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/AscendingBranchingNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/AscendingBranchingNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=AscendingBranchingNode">Search occurrences</a>
         <br />
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/DescendingBranchingNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/DescendingBranchingNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=DescendingBranchingNode">Search occurrences</a>
     </div>
     <p>The <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> both extend the <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a>, but also have ready-to-use up/down navigation.</p>
@@ -220,7 +216,7 @@
     
     <h3><span id="RoundBracketsNode">RoundBracketsNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/RoundBracketsNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/RoundBracketsNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=RoundBracketsNode">Search occurrences</a>
     </div>
     <p>
@@ -231,7 +227,7 @@
     
     <h3><span id="MatrixNode">MatrixNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/MatrixNode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/SyntaxTreeComponents/Nodes/BranchingNodes/MatrixNode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=MatrixNode">Search occurrences</a>
     </div>
     <p>
@@ -245,7 +241,7 @@
     
     <h3><span id="insert">insert</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insert.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insert.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insert">Search occurrences</a>
     </div>
     <p>You could use only this method and skip the other insert methods, but users "expect" certain behaviour - for example at "2 to the power of 10":<br />
@@ -269,21 +265,21 @@
     
     <h3><span id="insertWithEncapsulateCurrent">insertWithEncapsulateCurrent</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateCurrent.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateCurrent.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insertWithEncapsulateCurrent">Search occurrences</a>
     </div>
     <p>See the explanation at <a href="#insert" class="mke-member">insert</a>.</p>
     
     <h3><span id="insertWithEncapsulateSelection">insertWithEncapsulateSelection</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelection.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelection.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insertWithEncapsulateSelection">Search occurrences</a>
     </div>
     <p>Let's say you've typed 1 + x and you then* decide that this should become the numerator of a fraction. In that case, you can use <a href="#selectLeft" class="mke-member">selectLeft</a> and call <a href="#insertWithEncapsulateSelection" class="mke-member">insertWithEncapsulateSelection</a> to insert a "fraction node".</p>
     <p>*There are multiple ways to do this more efficiently.</p>
     <h3><span id="insertWithEncapsulateSelectionAndPrevious">insertWithEncapsulateSelectionAndPrevious</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelectionAndPrevious.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Insertion/insertWithEncapsulateSelectionAndPrevious.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=insertWithEncapsulateSelectionAndPrevious">Search occurrences</a>
     </div>
     <p>Let's say you wanted to type "2 to the power of 10", but you type "210". Now you can (enter "selection mode" and) use <a href="#selectLeft" class="mke-member">selectLeft</a> twice, followed by <a href="#insertWithEncapsulateSelectionAndPrevious" class="mke-member">insertWithEncapsulateSelectionAndPrevious</a> to get what you intended to get.</p>
@@ -294,7 +290,7 @@
     
     <h3><span id="deleteLeft">deleteLeft</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Deletion/deleteLeft.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Deletion/deleteLeft.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=deleteLeft">Search occurrences</a>
     </div>
     <p>
@@ -303,7 +299,7 @@
     </p>    
     <h3><span id="deleteRight">deleteRight</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Deletion/deleteRight.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Deletion/deleteRight.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=deleteRight">Search occurrences</a>
     </div>
     <p>
@@ -313,7 +309,7 @@
 
     <h3><span id="deleteSelection">deleteSelection</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Deletion/deleteSelection.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Deletion/deleteSelection.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=deleteSelection">Search occurrences</a>
     </div>
     <p>To be used together with - for example - <a href="#selectLeft" class="mke-member">selectLeft</a>. Very probably, users will use <a href="#deleteLeft" class="mke-member">deleteLeft</a> multiple times instead. But if you're in selection and the delete key is pressed, this method provides the expected behaviour.</p>
@@ -324,28 +320,28 @@
 
     <h3><span id="moveLeft">moveLeft</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveLeft.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveLeft.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=moveLeft">Search occurrences</a>
     </div>
     <p>Moves the cursor to the left.</p>
     
     <h3><span id="moveRight">moveRight</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveRight.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveRight.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=moveRight">Search occurrences</a>
     </div>
     <p>Moves the cursor to the right.</p>
     
     <h3><span id="moveDown">moveDown</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveDown.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveDown.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=moveDown">Search occurrences</a>
     </div>
     <p>The <a href="#MatrixNode" class="mke-member">MatrixNode</a>, <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> implement <a href="#BranchingNode" class="mke-member">BranchingNode</a>'s <code>getmoveDownSuggestion</code> and therefore support moving the cursor down. You can also extend the <a href="#BranchingNode" class="mke-member">BranchingNode</a> class to support other up/down-navigation patterns.</p>
     
     <h3><span id="moveUp">moveUp</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveUp.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Navigation/moveUp.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=moveUp">Search occurrences</a>
     </div>
     <p>The <a href="#MatrixNode" class="mke-member">MatrixNode</a>, <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> implement <a href="#BranchingNode" class="mke-member">BranchingNode</a>'s <code>getMoveUpSuggestion</code>, and therefore support moving the cursor up. You can also extend the <a href="#BranchingNode" class="mke-member">BranchingNode</a> class to support other up/down-navigation patterns.</p>
@@ -359,21 +355,21 @@
     
     <h3><span id="selectLeft">selectLeft</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/selectLeft.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/selectLeft.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=selectLeft">Search occurrences</a>
     </div>
     <p>Do or undo a (highlighted) selection of parts of what you've typed. Set your preferred highlighting color in the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>.</p>
     
     <h3><span id="selectRight">selectRight</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/selectRight.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/selectRight.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=selectRight">Search occurrences</a>
     </div>
     <p>Do or undo a (highlighted) selection of parts of what you've typed. Set your preferred highlighting color in the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>.</p>
     
     <h3><span id="enterSelectionMode">enterSelectionMode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/enterSelectionMode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/enterSelectionMode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=enterSelectionMode">Search occurrences</a>
     </div>
     <p>
@@ -383,7 +379,7 @@
     
     <h3><span id="leaveSelectionMode">leaveSelectionMode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/leaveSelectionMode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/leaveSelectionMode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=leaveSelectionMode">Search occurrences</a>
     </div>
     <p>
@@ -392,9 +388,86 @@
     
     <h3><span id="inSelectionMode">inSelectionMode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/v0.1/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/inSelectionMode.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/KeyboardEngine/Functions/Selection/inSelectionMode.swift">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=inSelectionMode">Search occurrences</a>
     </div>
+
+    <h2>7. Parsing a LaTeX string</h2>
+    <p>
+        Depending on the type of application you're building, you may want to parse a LaTeX string. For example:
+        <ul>
+            <li>You want to pre-fill the 'math textbox'.</li>
+            <li>You want to allow a user to also use raw LaTex commands.</li>
+        </ul>
+        The method <a href="#parseLatex" class="mke-member">parseLatex</a> returns a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance that contains the syntax tree of parsed LaTeX.
+    </p>
+    <p>For adding the result to an existing <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance, use something like 
+        <pre>
+    <code>let parsedNodes = parsedKeyboardMemory.syntaxTreeRoot.nodes</code>
+    <code>keyboardMemory.insert(parsedNodes)</code>
+        </pre>
+    </p>
+
+    <h3><span id="parseLatex">parseLatex</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/LatexParser/parseLatex.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=parseLatex">Search occurrences</a>
+    </div>
+    <p>
+        A few notes about non-configurable behaviour:
+        <ul>
+            <li>
+                If the input is <code>x^2</code>, then a <code>new StandardLeafNode("^")</code> is inserted for the <code>^</code> symbol. If the input is <code>x^{2}</code>, then a <code>new AscendingBranchingNode("", "^{", "}")</code> is inserted. Analogous for <code>a_1</code> and <code>a_{1}</code>.
+            </li>
+            <li>
+                The <code>\text{}</code> command and its contents can be parsed, but for editing its content, a few tricks are probably needed. For example: how to add a space? You could add a space via a <code>new StandardLeafNode(" ")</code>.
+            </li>
+            <li>
+                A command of the form <code>\command_{}^{}</code> is inserted as a <code>new StandardLeafNode(@"\command")</code> followed by a <code>new AscendingBranchingNode("_{", "}^{", "}")</code>, so that editing the <code>\command</code> (e.g. <code>\int</code>, <code>\sum</code>, etc) is possible without losing the (sub/super)scripts.
+            </li>
+        </ul>
+    </p>
+
+    <h3><span id="LatexParserConfiguration">LatexParserConfiguration</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/blob/main/Sources/MathKeyboardEngine/LatexParser/LatexParserConfiguration.swift">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Swift/search?q=LatexParserConfiguration">Search occurrences</a>
+    </div>
+    <p>
+        You can use the default settings and call the parser without <a href="#LatexParserConfiguration" class="mke-member">LatexParserConfiguration</a> like this:
+        <pre>
+    <code>var keyboardMemory = parseLatex(latexString);</code>
+        </pre>
+        For most use cases this is probably enough, because:
+        <ul>
+            <li>the digits 0, 1, ..., 9 are understood as <a href="#DigitNode" class="mke-member">DigitNode</a>s,</li>
+            <li>the strings <code>.</code> and <code>{,}</code> are understood as <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>s,</li>
+            <li>commands of the type <code>\command[]{}</code> and <code>\command{}{}</code> as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>s,</li>
+            <li>commands of the type <code>\command{}</code> are interpreted as <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a>s with one <a href="#Placeholder" class="mke-member">Placeholder</a>,</li>
+            <li>commands like <code>\begin{pmatrix}</code> and <code>\begin{rcases}</code> are interpreted as <a href="#MatrixNode" class="mke-member">MatrixNode</a>s,</li>
+            <li>superscripts and subscripts are understood as <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a>s or <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>s,</li>
+            <li>and most other commands and characters are interpreted as <a href="#LeafNode" class="mke-member">LeafNode</a>s.</li>
+        </ul>
+    </p>
+    <p>
+        A few notes about configurable behaviour:
+        <ul>
+            <li>
+                The brackets <code>(</code>, <code>)</code>, <code>\left(</code> and <code>\right)</code> are inserted as <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s or as a <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a> depending on the setting <code>preferRoundBracketsNode</code>. By default, <code>preferRoundBracketsNode = true</code>.
+            </li>
+            <li>
+                Set <code>additionalDigits</code> if you're parsing a LaTeX string that contains digits that are not 0, 1, ..., 9 (for example for working with base 12) to make sure that those other digits are parsed as <a href="#DigitNode" class="mke-member">DigitNode</a>s. (Unless you don't mind that those other digits are <a href="#insert" class="mke-member">insert</a>ed as <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s.) 
+            </li>
+            <li>
+                Assign a string or a function to the <code>preferredDecimalSeparator</code> if you want to change the LaTeX output of the parsed <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>s.
+            </li>
+            <li>
+                By default only the symbols <code>.</code> and <code>{,}</code> are parsed as <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>, because <code>,</code> should probably not be interpreted as a decimal separator. However, you're free to assign a different value to <code>DecimalSeparatorMatchers</code>.
+                Note that this setting is only about interpreting the input - for telling the parser which symbols should be a <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a> and which should be a <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a> - not for configuring the output.
+                You could for example set it to <code>[ ".", "," , "{,}" ]</code> while using no <code>preferredDecimalSeparator</code>.
+            </li>
+        </ul>
+    </p>
     
     <br />
     <br />
