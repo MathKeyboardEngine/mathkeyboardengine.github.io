@@ -403,8 +403,8 @@
     </p>
     <p>For adding the result to an existing <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance, use something like 
         <pre>
-    <code>parsed_nodes = parsed_keyboard_memory.syntax_tree_root.nodes</code>
-    <code>insert(keyboard_memory, parsed_nodes)</code>
+    <code>parsed_nodes = parsed_keyboardmemory.syntax_tree_root.nodes</code>
+    <code>insert(keyboardmemory, parsed_nodes)</code>
         </pre>
     </p>
 
@@ -436,7 +436,7 @@
     <p>
         You can use the default settings and call the parser without <a href="#LatexParserConfiguration" class="mke-member">LatexParserConfiguration</a> like this:
         <pre>
-    <code>keyboard_memory = parse_latex(latex_string);</code>
+    <code>keyboardmemory = parse_latex(latex_string)</code>
         </pre>
         For most use cases this is probably enough, because:
         <ul>
