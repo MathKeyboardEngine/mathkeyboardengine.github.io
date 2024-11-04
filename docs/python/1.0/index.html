@@ -14,13 +14,8 @@
   </head>
   <body>
 
-    <h1>Documentation v0.2 (Python)</h1>
-    <div class="warning">
-        This is documenation of version 2.0. Go to the <strong><a href="https://mathkeyboardengine.github.io/docs/python/latest">latest version</a></strong>.<br/>
-        Links from this page to declarations lead to an <a href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2">older version of the repository on branch "v0.2"</a>.<br/>
-        Other links - for example for searching occurrences - lead to the new repository.
-    </div>
-    <p class="previous-docs">Previous versions: <a href="https://mathkeyboardengine.github.io/docs/python/0.1/">v0.1</a>.</p>
+    <h1>Documentation (Python)</h1>
+    <p class="previous-docs">Previous versions: <a href="https://mathkeyboardengine.github.io/docs/python/0.2/">v0.2</a>.</p>
     <p>This page shows all <strong>MathKeyboardEngine for Python</strong> classes and functions that you can directly use.
         Helper functions that are not avaible from the root namespace of the library, are not mentioned.
         This documentation is not exhaustive.
@@ -41,14 +36,14 @@
     
     <h3><span id="KeyboardMemory">KeyboardMemory</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/KeyboardMemory.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/KeyboardMemory.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=KeyboardMemory">Search occurrences</a>
     </div>
     <p>If you type into a 'math textbox', you use a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance for that textbox. The <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class will hold the syntax tree of what you've typed and what the <code>current</code> position is of the cursor. If you'd like to have multiple math textboxes on one page, then use multple instances of the <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> class, each linked to a single 'textbox'.</p>
 
     <h3><span id="LatexConfiguration">LatexConfiguration</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/LatexConfiguration.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/LatexConfiguration.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=LatexConfiguration">Search occurrences</a>
     </div>
     <p>In the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a> class, the cursor is called the "active placeholder".
@@ -62,10 +57,10 @@
         <span id="get_view_mode_latex">get_view_mode_latex</span>
     </h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/get_latex/get_edit_mode_latex.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/get_latex/get_edit_mode_latex.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=get_edit_mode_latex">Search occurrences</a>
         <br />
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/get_latex/get_view_mode_latex.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/get_latex/get_view_mode_latex.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=get_view_mode_latex">Search occurrences</a>
     </div>
     <p>
@@ -77,7 +72,7 @@
     <h2>2. Syntax tree components</h2>
     <h3><span id="Placeholder">Placeholder</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/Placeholder/Placeholder.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/Placeholder/Placeholder.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=Placeholder">Search occurrences</a>
     </div>
     <p>A <a href="#Placeholder" class="mke-member">Placeholder</a> can be empty or it can contain <a href="#TreeNode" class="mke-member">TreeNode</a>s. If you type <kbd>a</kbd>, <kbd>+</kbd> and <kbd>1</kbd>, then the syntax tree consists of one <a href="#Placeholder" class="mke-member">Placeholder</a> (<a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a>'s <code>syntax_tree_root</code>) and three <a href="#TreeNode" class="mke-member">TreeNode</a>s:<br />
@@ -94,14 +89,14 @@
     </div>
     <h3><span id="TreeNode">TreeNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/base/TreeNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/base/TreeNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=TreeNode">Search occurrences</a>
     </div>
     <p>A <a href="#TreeNode" class="mke-member">TreeNode</a> can be as simple as '3', which is called a <a href="#LeafNode" class="mke-member">LeafNode</a> (it has no <a href="#Placeholder" class="mke-member">Placeholder</a>s). A fraction has two <a href="#Placeholder" class="mke-member">Placeholder</a>s: the numerator and the denominator. If a <a href="#TreeNode" class="mke-member">TreeNode</a> has <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s, it is called a <a href="#BranchingNode" class="mke-member">BranchingNode</a>.</p>
         
     <h3><span id="LeafNode">LeafNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/base/LeafNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/base/LeafNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=LeafNode">Search occurrences</a>
     </div>
     <p>The base class for all <a href="#TreeNode" class="mke-member">TreeNode</a>s that have no <a href="#Placeholder" class="mke-member">Placeholder</a>s. You'll probably not use this class directly in your code, unless you would like to create your own SyntaxTree-manipulating functions.</p>
@@ -111,17 +106,17 @@
     </div>
     <h3><span id="StandardLeafNode">StandardLeafNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/LeafNodes/StandardLeafNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/LeafNodes/StandardLeafNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=StandardLeafNode">Search occurrences</a>
     </div>
     <p>The <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a> should be used for everything that has no <a href="#Placeholder" class="mke-member">Placeholder</a>, except if it is part of a number with digits (such as 12.75, for which you should use <a href="#DigitNode" class="mke-member">DigitNode</a>s and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>). So, use this for variables x, y, z, for arrows, and more.</p>
     
     <h3><span id="DigitNode">DigitNode</span> and <span id="DecimalSeparatorNode">DecimalSeparatorNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/LeafNodes/DigitNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/LeafNodes/DigitNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=DigitNode">Search occurrences</a>
         <br />
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/LeafNodes/DecimalSeparatorNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/LeafNodes/DecimalSeparatorNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=DecimalSeparatorNode">Search occurrences</a>
     </div>
     <p>Use the <a href="#DigitNode" class="mke-member">DigitNode</a> for composing a number with 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 (and maybe other symbols if you like to type not in base 10, but in - for example - base 12) and the <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a> for its decimal separator ('.' or ',' in some cultures).<br />
@@ -129,7 +124,7 @@
     
     <h3><span id="BranchingNode">BranchingNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/base/BranchingNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/base/BranchingNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=BranchingNode">Search occurrences</a>
     </div>
     <p>The base class for all <a href="#TreeNode" class="mke-member">TreeNode</a>s that have <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. You'll probably not use this class directly in your code, unless you would like to create your own SyntaxTree-manipulating functions.</p>
@@ -184,7 +179,7 @@
 
     <h3><span id="StandardBranchingNode">StandardBranchingNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/BranchingNodes/StandardBranchingNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/BranchingNodes/StandardBranchingNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=StandardBranchingNode">Search occurrences</a>
     </div>
     <p>The <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a> is a <a href="#BranchingNode" class="mke-member">BranchingNode</a> with <i>one or multiple</i> <a href="#Placeholder" class="mke-member">Placeholder</a>s. The number of <a href="#Placeholder" class="mke-member">Placeholder</a>s that is created, depends on the number of constructor arguments as follows:<br />
@@ -201,10 +196,10 @@
     
     <h3><span id="AscendingBranchingNode">AscendingBranchingNode</span> and <span id="DescendingBranchingNode">DescendingBranchingNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/BranchingNodes/AscendingBranchingNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/BranchingNodes/AscendingBranchingNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=AscendingBranchingNode">Search occurrences</a>
         <br />
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/BranchingNodes/DescendingBranchingNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/BranchingNodes/DescendingBranchingNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=DescendingBranchingNode">Search occurrences</a>
     </div>
     <p>The <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> both extend the <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a>, but also have ready-to-use up/down navigation.</p>
@@ -221,7 +216,7 @@
     
     <h3><span id="RoundBracketsNode">RoundBracketsNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/BranchingNodes/RoundBracketsNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/BranchingNodes/RoundBracketsNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=RoundBracketsNode">Search occurrences</a>
     </div>
     <p>
@@ -232,7 +227,7 @@
     
     <h3><span id="MatrixNode">MatrixNode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/syntax_tree_components/nodes/BranchingNodes/MatrixNode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/syntax_tree_components/nodes/BranchingNodes/MatrixNode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=MatrixNode">Search occurrences</a>
     </div>
     <p>
@@ -246,7 +241,7 @@
     
     <h3><span id="insert">insert</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/insertion/insert.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/insertion/insert.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=insert">Search occurrences</a>
     </div>
     <p>You could use only this function and skip the other insert functions, but users "expect" certain behaviour - for example at "2 to the power of 10":<br />
@@ -270,21 +265,21 @@
     
     <h3><span id="insert_with_encapsulate_current">insert_with_encapsulate_current</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/insertion/insert_with_encapsulate_current.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/insertion/insert_with_encapsulate_current.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=insert_with_encapsulate_current">Search occurrences</a>
     </div>
     <p>See the explanation at <a href="#insert" class="mke-member">insert</a>.</p>
     
     <h3><span id="insert_with_encapsulate_selection">insert_with_encapsulate_selection</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/insertion/insert_with_encapsulate_selection.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/insertion/insert_with_encapsulate_selection.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=insert_with_encapsulate_selection">Search occurrences</a>
     </div>
     <p>Let's say you've typed 1 + x and you then* decide that this should become the numerator of a fraction. In that case, you can use <a href="#select_left" class="mke-member">select_left</a> and call <a href="#insert_with_encapsulate_selection" class="mke-member">insert_with_encapsulate_selection</a> to insert a "fraction node".</p>
     <p>*There are multiple ways to do this more efficiently.</p>
     <h3><span id="insert_with_encapsulate_selection_and_previous">insert_with_encapsulate_selection_and_previous</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/insertion/insert_with_encapsulate_selection_and_previous.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/insertion/insert_with_encapsulate_selection_and_previous.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=insert_with_encapsulate_selection_and_previous">Search occurrences</a>
     </div>
     <p>Let's say you wanted to type "2 to the power of 10", but you type "210". Now you can (enter "selection mode" and) use <a href="#select_left" class="mke-member">select_left</a> twice, followed by <a href="#insert_with_encapsulate_selection_and_previous" class="mke-member">insert_with_encapsulate_selection_and_previous</a> to get what you intended to get.</p>
@@ -295,7 +290,7 @@
     
     <h3><span id="delete_left">delete_left</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/deletion/delete_left.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/deletion/delete_left.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=delete_left">Search occurrences</a>
     </div>
     <p>
@@ -305,7 +300,7 @@
     
     <h3><span id="delete_right">delete_right</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/deletion/delete_right.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/deletion/delete_right.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=delete_right">Search occurrences</a>
     </div>
     <p>
@@ -314,7 +309,7 @@
     </p>    
     <h3><span id="delete_selection">delete_selection</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/deletion/delete_selection.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/deletion/delete_selection.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=delete_selection">Search occurrences</a>
     </div>
     <p>To be used together with - for example - <a href="#select_left" class="mke-member">select_left</a>. Very probably, users will use <a href="#delete_left" class="mke-member">delete_left</a> multiple times instead. But if you're in selection and the delete key is pressed, this function provides the expected behaviour.</p>
@@ -325,28 +320,28 @@
 
     <h3><span id="move_left">move_left</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/navigation/move_left.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/navigation/move_left.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=move_left">Search occurrences</a>
     </div>
     <p>Moves the cursor to the left.</p>
     
     <h3><span id="move_right">move_right</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/navigation/move_right.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/navigation/move_right.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=move_right">Search occurrences</a>
     </div>
     <p>Moves the cursor to the right.</p>
     
     <h3><span id="move_down">move_down</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/navigation/move_down.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/navigation/move_down.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=move_down">Search occurrences</a>
     </div>
     <p>The <a href="#MatrixNode" class="mke-member">MatrixNode</a>, <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> implement <a href="#BranchingNode" class="mke-member">BranchingNode</a>'s <code>get_move_down_suggestion </code> and therefore support moving the cursor down. You can also extend the <a href="#BranchingNode" class="mke-member">BranchingNode</a> class to support other up/down-navigation patterns.</p>
     
     <h3><span id="move_up">move_up</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/navigation/move_up.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/navigation/move_up.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=move_up">Search occurrences</a>
     </div>
     <p>The <a href="#MatrixNode" class="mke-member">MatrixNode</a>, <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a> and <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a> implement <a href="#BranchingNode" class="mke-member">BranchingNode</a>'s <code>get_move_up_suggestion </code>, and therefore support moving the cursor up. You can also extend the <a href="#BranchingNode" class="mke-member">BranchingNode</a> class to support other up/down-navigation patterns.</p>
@@ -360,21 +355,21 @@
     
     <h3><span id="select_left">select_left</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/selection/select_left.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/selection/select_left.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=select_left">Search occurrences</a>
     </div>
     <p>Do or undo a (highlighted) selection of parts of what you've typed. Set your preferred highlighting color in the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>.</p>
     
     <h3><span id="select_right">select_right</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/selection/select_right.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/selection/select_right.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=select_right">Search occurrences</a>
     </div>
     <p>Do or undo a (highlighted) selection of parts of what you've typed. Set your preferred highlighting color in the <a href="#LatexConfiguration" class="mke-member">LatexConfiguration</a>.</p>
     
     <h3><span id="enter_selection_mode">enter_selection_mode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/selection/enter_selection_mode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/selection/enter_selection_mode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=enter_selection_mode">Search occurrences</a>
     </div>
     <p>
@@ -384,7 +379,7 @@
     
     <h3><span id="leave_selection_mode">leave_selection_mode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/selection/leave_selection_mode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/selection/leave_selection_mode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=leave_selection_mode">Search occurrences</a>
     </div>
     <p>
@@ -393,10 +388,87 @@
     
     <h3><span id="in_selection_mode">in_selection_mode</span></h3>
     <div class="external-links">
-        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/tree/v0.2/src/keyboard_engine/functions/selection/in_selection_mode.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/keyboard_engine/functions/selection/in_selection_mode.py">View declaration</a>
         <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=in_selection_mode">Search occurrences</a>
     </div>
     
+    <h2>7. Parsing a LaTeX string</h2>
+    <p>
+        Depending on the type of application you're building, you may want to parse a LaTeX string. For example:
+        <ul>
+            <li>You want to pre-fill the 'math textbox'.</li>
+            <li>You want to allow a user to also use raw LaTex commands.</li>
+        </ul>
+        The function <a href="#parse_latex" class="mke-member">parse_latex</a> returns a <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance that contains the syntax tree of parsed LaTeX.
+    </p>
+    <p>For adding the result to an existing <a href="#KeyboardMemory" class="mke-member">KeyboardMemory</a> instance, use something like 
+        <pre>
+    <code>parsed_nodes = parsed_keyboard_memory.syntax_tree_root.nodes</code>
+    <code>insert(keyboard_memory, parsed_nodes)</code>
+        </pre>
+    </p>
+
+    <h3><span id="parse_latex">parse_latex</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/latex_parser/parse_latex.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=parse_latex">Search occurrences</a>
+    </div>
+    <p>
+        A few notes about non-configurable behaviour:
+        <ul>
+            <li>
+                If the input is <code>x^2</code>, then a <code>StandardLeafNode('^')</code> is inserted for the <code>^</code> symbol. If the input is <code>x^{2}</code>, then an <code>AscendingBranchingNode('', '^{', '}')</code> is inserted. Analogous for <code>a_1</code> and <code>a_{1}</code>.
+            </li>
+            <li>
+                The <code>\text{}</code> command and its contents can be parsed, but for editing its content, a few tricks are probably needed. For example: how to add a space? You could add a space via a <code>StandardLeafNode(' ')</code>.
+            </li>
+            <li>
+                A command of the form <code>\command_{}^{}</code> is inserted as a <code>StandardLeafNode(r'\command')</code> followed by a <code>AscendingBranchingNode('_{', '}^{', '}')</code>, so that editing the <code>\command</code> (e.g. <code>\int</code>, <code>\sum</code>, etc) is possible without losing the (sub/super)scripts.
+            </li>
+        </ul>
+    </p>
+
+    <h3><span id="LatexParserConfiguration">LatexParserConfiguration</span></h3>
+    <div class="external-links">
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/blob/main/src/latex_parser/LatexParserConfiguration.py">View declaration</a>
+        <a target="_blank" class="repo-link" href="https://github.com/MathKeyboardEngine/MathKeyboardEngine.Python/search?q=LatexParserConfiguration">Search occurrences</a>
+    </div>
+    <p>
+        You can use the default settings and call the parser without <a href="#LatexParserConfiguration" class="mke-member">LatexParserConfiguration</a> like this:
+        <pre>
+    <code>keyboard_memory = parse_latex(latex_string);</code>
+        </pre>
+        For most use cases this is probably enough, because:
+        <ul>
+            <li>the digits 0, 1, ..., 9 are understood as <a href="#DigitNode" class="mke-member">DigitNode</a>s,</li>
+            <li>the strings <code>.</code> and <code>{,}</code> are understood as <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>s,</li>
+            <li>commands of the type <code>\command[]{}</code> and <code>\command{}{}</code> as <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>s,</li>
+            <li>commands of the type <code>\command{}</code> are interpreted as <a href="#StandardBranchingNode" class="mke-member">StandardBranchingNode</a>s with one <a href="#Placeholder" class="mke-member">Placeholder</a>,</li>
+            <li>commands like <code>\begin{pmatrix}</code> and <code>\begin{rcases}</code> are interpreted as <a href="#MatrixNode" class="mke-member">MatrixNode</a>s,</li>
+            <li>superscripts and subscripts are understood as <a href="#AscendingBranchingNode" class="mke-member">AscendingBranchingNode</a>s or <a href="#DescendingBranchingNode" class="mke-member">DescendingBranchingNode</a>s,</li>
+            <li>and most other commands and characters are interpreted as <a href="#LeafNode" class="mke-member">LeafNode</a>s.</li>
+        </ul>
+    </p>
+    <p>
+        A few notes about configurable behaviour:
+        <ul>
+            <li>
+                The brackets <code>(</code>, <code>)</code>, <code>\left(</code> and <code>\right)</code> are inserted as <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s or as a <a href="#RoundBracketsNode" class="mke-member">RoundBracketsNode</a> depending on the setting <code>prefer_roundbracketsnode</code>. By default, <code>prefer_roundbracketsnode = True</code>.
+            </li>
+            <li>
+                Set <code>additionalDigits</code> if you're parsing a LaTeX string that contains digits that are not 0, 1, ..., 9 (for example for working with base 12) to make sure that those other digits are parsed as <a href="#DigitNode" class="mke-member">DigitNode</a>s. (Unless you don't mind that those other digits are <a href="#insert" class="mke-member">insert</a>ed as <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a>s.) 
+            </li>
+            <li>
+                Assign a string or a function to the <code>preferred_decimal_separator</code> if you want to change the LaTeX output of the parsed <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>s.
+            </li>
+            <li>
+                By default only the symbols <code>.</code> and <code>{,}</code> are parsed as <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a>, because <code>,</code> should probably not be interpreted as a decimal separator. However, you're free to assign a different value to <code>decimalSeparatorMatchers</code>.
+                Note that this setting is only about interpreting the input - for telling the parser which symbols should be a <a href="#DecimalSeparatorNode" class="mke-member">DecimalSeparatorNode</a> and which should be a <a href="#StandardLeafNode" class="mke-member">StandardLeafNode</a> - not for configuring the output.
+                You could for example set it to <code>[ '.', ',', '{,}' ]</code> while using no <code>preferred_decimal_separator</code>.
+            </li>
+        </ul>
+    </p>
+
     <br />
     <br />
     <br />
